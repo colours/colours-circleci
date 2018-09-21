@@ -88,9 +88,6 @@ jobs:
         steps:
             - checkout
             - run:
-                name: Prepare environment
-                command: ./.circleci/scripts/pantheon/01-prepare
-            - run:
                 name: Update npm
                 command: 'sudo npm install -g npm@latest'
             - run:
