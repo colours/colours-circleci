@@ -88,11 +88,6 @@ jobs:
         steps:
             - checkout
             - run:
-                # Set TERMINUS_ENV and related environment variables.
-                # https://github.com/pantheon-systems/docker-build-tools-ci/blob/1.x/scripts/set-environment
-                name: dependencies
-                command: ./.circleci/scripts/pantheon/11-prepare-assets
-            - run:
                 name: Prepare environment
                 command: ./.circleci/scripts/pantheon/01-prepare
             - run:
