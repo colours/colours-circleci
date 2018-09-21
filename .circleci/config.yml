@@ -83,12 +83,18 @@ jobs:
 
     build_assets:
         # The primary container is an instance of the first image listed. The job's commands run in this container.
-        requires:
-            - build
         docker:
-            - image: circleci/node:10
+            - image: quay.io/pantheon-public/build-tools-ci:2.x
         steps:
             - checkout
+            - run:
+                # Set TERMINUS_ENV and related environment variables.
+                # https://github.com/pantheon-systems/docker-build-tools-ci/blob/1.x/scripts/set-environment
+                name: dependencies
+                command: /build-tools-ci/scripts/set-environment
+            - run:
+                name: Prepare environment
+                command: ./.circleci/scripts/pantheon/01-prepare
             - run:
                 name: Update npm
                 command: 'sudo npm install -g npm@latest'
@@ -98,6 +104,9 @@ jobs:
             - run:
                 name: handle merge to master (if needed)
                 command: ./.circleci/scripts/pantheon/04-merge-master
+            - run:
+                name: remove transient test fixtures
+                command: ./.circleci/scripts/pantheon/09-cleanup-fixtures
 
     build_deploy_and_test:
         <<: *defaults
