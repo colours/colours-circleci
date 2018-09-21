@@ -158,5 +158,7 @@ workflows:
     jobs:
       # Install dev dependencies and do simple tests (sniff, unit tests, etc.)
       - build
+      # Build assets for theme using npm ci
+      - build_assets
       # Build deploy and test on target platform
       - build_deploy_and_test
