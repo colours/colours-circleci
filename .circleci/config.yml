@@ -81,6 +81,28 @@ jobs:
                 name: run unit tests
                 command: composer -n unit-test
 
+    build_assets:
+        # The primary container is an instance of the first image listed. The job's commands run in this container.
+        docker:
+            - image: circleci/node:10
+        steps:
+            - checkout
+            - run:
+                name: Go to theme folder
+                command: cd /web/themes/custom/breda_university
+            - run:
+                name: Update npm
+                command: 'sudo npm install -g npm@latest'
+            - restore_cache:
+                key: dependency-cache-{{ checksum "package.json" }}
+            - run:
+                name: run npm ci
+                command: npm ci
+            - save_cache:
+                key: dependency-cache-{{ checksum "package.json" }}
+                paths:
+                    - node_modules
+
     build_deploy_and_test:
         <<: *defaults
         steps:
