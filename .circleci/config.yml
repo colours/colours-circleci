@@ -85,21 +85,22 @@ jobs:
         # The primary container is an instance of the first image listed. The job's commands run in this container.
         docker:
             - image: circleci/node:10
+        working_directory: ~/web/themes/custom/breda_university
         steps:
             - checkout
-            - run:
-                name: Go to theme folder
-                command: cd ./web/themes/custom/breda_university
+            # - run:
+            #     name: Go to theme folder
+            #     command: cd ./web/themes/custom/breda_university
             - run:
                 name: Update npm
                 command: 'sudo npm install -g npm@latest'
             - restore_cache:
-                key: dependency-cache-{{ checksum "./web/themes/custom/breda_university/package.json" }}
+                key: dependency-cache-{{ checksum "package.json" }}
             - run:
                 name: run npm ci
                 command: npm ci
             - save_cache:
-                key: dependency-cache-{{ checksum "./web/themes/custom/breda_university/package.json" }}
+                key: dependency-cache-{{ checksum "package.json" }}
                 paths:
                     - node_modules
 
