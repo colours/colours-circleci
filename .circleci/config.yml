@@ -89,7 +89,7 @@ jobs:
             - checkout
             - run:
                 name: Go to theme folder
-                command: cd /web/themes/custom/breda_university
+                command: cd ./web/themes/custom/breda_university
             - run:
                 name: Update npm
                 command: 'sudo npm install -g npm@latest'
