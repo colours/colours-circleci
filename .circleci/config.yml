@@ -84,7 +84,7 @@ jobs:
     build_assets:
         # The primary container is an instance of the first image listed. The job's commands run in this container.
         docker:
-            - image: quay.io/pantheon-public/build-tools-ci:2.x
+            - image: quay.io/pantheon-public/build-tools-ci:nodejs
         steps:
             - checkout
             - run:
