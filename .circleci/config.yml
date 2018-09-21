@@ -2,7 +2,6 @@
 defaults: &defaults
   docker:
     - image: quay.io/pantheon-public/build-tools-ci:1.x
-    - image: circleci/node:10
   working_directory: ~/example_drops_8_composer
   environment:
     #=========================================================================
@@ -82,6 +81,33 @@ jobs:
                 name: run unit tests
                 command: composer -n unit-test
 
+    build_assets:
+        # The primary container is an instance of the first image listed. The job's commands run in this container.
+        docker:
+            - image: circleci/node:10
+        steps:
+            - checkout
+            - run:
+                # Set TERMINUS_ENV and related environment variables.
+                # https://github.com/pantheon-systems/docker-build-tools-ci/blob/1.x/scripts/set-environment
+                name: dependencies
+                command: /build-tools-ci/scripts/set-environment
+            - run:
+                name: Prepare environment
+                command: ./.circleci/scripts/pantheon/01-prepare
+            - run:
+                name: Update npm
+                command: 'sudo npm install -g npm@latest'
+            - run:
+                name: run npm ci and build assets for Drupal
+                command: cd ./web/themes/custom/breda_university && npm ci && npm run build:drupal
+            - run:
+                name: handle merge to master (if needed)
+                command: ./.circleci/scripts/pantheon/04-merge-master
+            - run:
+                name: remove transient test fixtures
+                command: ./.circleci/scripts/pantheon/09-cleanup-fixtures
+
     build_deploy_and_test:
         <<: *defaults
         steps:
@@ -103,14 +129,9 @@ jobs:
                 command: ./.circleci/scripts/pantheon/01-prepare
 
             - run:
-                name: Update npm
-                command: 'sudo npm install -g npm@latest'
-            - run:
-                name: run npm ci and build assets for Drupal
-                command: cd ./web/themes/custom/breda_university && npm ci && npm run build:drupal
-            - run:
                 name: build assets
                 command: composer -n build-assets
+
             - run:
                 name: prepare database for site-under test
                 command: ./.circleci/scripts/pantheon/02-init-site-under-test-clone-existing
@@ -142,5 +163,7 @@ workflows:
     jobs:
       # Install dev dependencies and do simple tests (sniff, unit tests, etc.)
       - build
+      # Build assets for theme using npm ci
+      - build_assets
       # Build deploy and test on target platform
       - build_deploy_and_test
