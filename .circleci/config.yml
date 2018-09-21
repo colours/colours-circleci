@@ -3,7 +3,6 @@ defaults: &defaults
   docker:
     - image: quay.io/pantheon-public/build-tools-ci:1.x
     - image: circleci/node:10
-      command: [npm]
   working_directory: ~/example_drops_8_composer
   environment:
     #=========================================================================
