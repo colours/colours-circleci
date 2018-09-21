@@ -87,17 +87,14 @@ jobs:
             - image: circleci/node:10
         steps:
             - checkout
-            # - run:
-            #     name: Go to theme folder
-            #     command: cd ./web/themes/custom/breda_university
             - run:
                 name: Update npm
                 command: 'sudo npm install -g npm@latest'
             # - restore_cache:
             #     key: dependency-cache-{{ checksum "package.json" }}
             - run:
-                name: run npm ci
-                command: cd ./web/themes/custom/breda_university && npm ci
+                name: run npm ci and build assets for Drupal
+                command: cd ./web/themes/custom/breda_university && npm ci && npm run build:drupal
             # - save_cache:
             #     key: dependency-cache-{{ checksum "package.json" }}
             #     paths:
