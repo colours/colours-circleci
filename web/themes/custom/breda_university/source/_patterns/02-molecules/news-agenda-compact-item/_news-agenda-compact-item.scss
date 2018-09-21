@@ -1,0 +1,52 @@
+// All component Sass needs non-printing base config
+@import '../../00-protons/variables';
+
+.news-agenda-compact-item {
+    margin-bottom: $spacer;
+    font-size: $font-size-sm;
+
+    a:hover {
+        text-decoration: none;
+    }
+
+    time {
+        font-family: $font-family-serif;
+        font-size: $font-size-xxl;
+        color: $bu-indigo;
+    }
+
+    .item__title {
+        font-family: $font-family-base;
+        font-size: $font-size-sm;
+        color: $bu-cadet;
+    }
+
+    .link {
+        display: block;
+        position: relative;
+        padding-bottom: $spacer;
+        font-size: $font-size-xs;
+        text-decoration: none;
+
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 4px;
+            width: $spacer-lg;
+            background-color: $bu-anti-flash-white;
+        }
+    }
+
+    &:last-child {
+        .link {
+            padding-bottom: 0;
+
+            &::after {
+                display: none;
+            }
+        }
+    }
+
+}

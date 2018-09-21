@@ -1,0 +1,171 @@
+@import '../../../00-protons/variables';
+
+// To change default bootstrap nav variables,
+// copy from ~bootstrap/scss/variables to here
+
+$nav-link-disabled-color: $gray-600;
+
+@import "~bootstrap/scss/nav";
+
+@include media-breakpoint-up(lg) {
+    .nav--footer div {
+        display: inline-block;
+    }
+}
+
+.nav--footer > .contextual {
+    right: auto;
+    left: 0;
+}
+
+.nav--footer {
+    .link {
+        color: $white;
+        text-decoration: none;
+    }
+}
+
+.footer__bottom {
+    border-top: 1px solid rgba($white, 0.23);
+
+    .slogan {
+        margin: 0;
+        font-family: $font-family-serif;
+        font-size: $font-size-base;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+
+    p {
+        margin: 0;
+        font-size: $font-size-xs;
+        font-size: 14px;
+        line-height: 22px;
+    }
+}
+
+@include media-breakpoint-down(md) {
+    .nav--footer {
+        flex-direction: row;
+
+        .nav-item {
+            display: inline-block;
+        }
+
+        .nav-link {
+            color: $white;
+            padding: $spacer-sm 0;
+        }
+    }
+}
+
+.nav--footer {
+    > ul {
+        &,
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        > li {
+            margin-right: $spacer-lg;
+
+            @include media-breakpoint-down(md) {
+                min-width: calc(45% - #{$spacer});
+                margin-right: $spacer;
+                margin-bottom: $spacer;
+            }
+
+            > .link {
+                margin: $spacer-sm 0;
+                font-size: $font-size-sm;
+                letter-spacing: 2px;
+                text-transform: uppercase;
+                color: $bu-bright-cerulean;
+            }
+
+            .link {
+                margin: $spacer-xs 0;
+            }
+
+            > ul {
+                display: flex;
+                flex-direction: column;
+            }
+        }
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    .nav--footer {
+        > ul {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            width: 100%;
+
+            > li {
+                width: 33.333%;
+            }
+        }
+    }
+}
+
+.social-channels {
+    display: inline-flex;
+    justify-content: flex-end;
+    flex-direction: column;
+
+    ul {
+        display: flex;
+        justify-content: flex-end;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        .icon {
+            position: relative;
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            margin-left: $spacer-md;
+            text-align: left;
+            text-indent: -999em;
+            vertical-align: middle;
+            text-decoration: none;
+            font-size: 0;
+            transition: opacity 0.2s;
+
+            &:hover {
+                opacity: 0.7;
+            }
+
+            &::before {
+                @include center(true, true, true);
+                font-size: 24px;
+                line-height: 30px;
+                color: $white;
+                text-indent: 0;
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+.subscribe-title {
+    margin: $spacer-sm 0 $spacer;
+    font-size: $font-size-sm;
+}
+
+.nav--footer-info {
+    .nav li {
+        display: block;
+        width: 100%;
+    }
+
+    .link {
+        text-decoration: none;
+        color: $white;
+    }
+}

@@ -1,0 +1,33 @@
+{#
+/**
+ * @file
+ * highlighted-item
+ *
+ * Available variables for highlighted-item:
+ *    - highlighted_item.title [String]: Title
+ *    - highlighted_item.date [String]: Date (j F Y)
+ *    - highlighted_item.text [String]: News or Agenda intro text
+ *    - highlighted_item.url [String]: Url to news or agenda item
+ *    - highlighted_item.media [Object]: Either a picture elemen or an video element.
+ */
+#}
+
+<section class="highlighted-item">
+    <div class="container container--md contextual-region">
+        {{ title_prefix }}
+        {{ title_suffix }}
+        <div class="row justify-content-between">
+            {% if highlighted_item.media %}
+            <div class="col-12 col-md-7 text-with-media__media">
+                {{ highlighted_item.media }}
+            </div>
+            {% endif %}
+            <div class="col-12 {% if highlighted_item.media %}col-md-5 pl-5{% else %}col-md-7{% endif %} text-with-media__text">
+                <h2 class="h1">{{ highlighted_item.title }}</h2>
+                <time datetime="{{ highlighted_item.date }}">{{ highlighted_item.date }}</time>
+                {{ highlighted_item.text }}
+                <a href="{{ highlighted_item.url }}" class="link link--underline text-bu-bright-cerulean">{{ 'Read more'|t }}</a>
+            </div>
+        </div>
+    </div>
+</section>

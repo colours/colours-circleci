@@ -1,0 +1,16 @@
+{#
+/**
+ * @file
+ * training_overview
+ *
+ * Available variables for training_overview:
+ *    - training_overview.variable_name [variable_type]: Description of the variable. Example below.
+ *    - training_overview.invert [bool]: When set, colors will be inverted for light display on dark background.
+ */
+#}
+
+<div class="training-overview">
+    {% include '@atoms/breadcrumb/_breadcrumb.twig' %}
+    {% include '@organisms/_program-overview-intro.twig' %}
+    {% include '@organisms/_program-overview.twig' %}
+</div>

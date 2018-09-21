@@ -1,0 +1,18 @@
+{#
+/**
+ * @file
+ * slide-collection
+ *
+ * Available variables for slider:
+ *    - slides [object]: Drupal collection of slides
+ */
+#}
+
+{% for slide in slides %}
+    {% if loop.index == 2 %}
+        {# {% set other_classes = 'is-next' %} #}
+    {% endif %}
+    {% include '@organisms/_slide.twig' with {
+        slide_other_classes: other_classes 
+     } %}
+{% endfor %}

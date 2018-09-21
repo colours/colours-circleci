@@ -1,0 +1,63 @@
+// All component Sass needs non-printing base config
+@import '../../00-protons/variables';
+
+.pager__items {
+    margin-left: - $spacer-sm;
+    padding: $spacer 0;
+    font-size: 0;
+}
+
+.pager__item {
+    display: inline-block;
+
+    + .pager__item {
+        margin-left: $spacer-sm;
+    }
+
+    a {
+        display: block;
+        height: $spacer-lg;
+        padding: $spacer-xs $spacer-sm;
+        font-size: $font-size-base;
+        font-weight: $font-weight-bold;
+        text-align: center;
+        border-bottom: 4px solid transparent;
+        color: $bu-bright-cerulean;
+        text-decoration: none;
+
+        &:hover {
+            color: $bu-indigo;
+            border-bottom-color: $bu-indigo;
+        }
+    }
+
+    &.is-active {
+        a {
+            color: $bu-indigo;
+            border-bottom-color: $bu-indigo;
+        }
+    }
+
+    &.pager__item--ellipsis {
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        padding: 5px 0;
+        font-size: 14px;
+        text-align: center;
+        color: $bu-anti-flash-white;
+        text-decoration: none;
+    }
+}
+
+.pager__item--first,
+.pager__item--previous,
+.pager__item--last,
+.pager__item--next {
+    a {
+        display: inherit;
+        width: auto;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}

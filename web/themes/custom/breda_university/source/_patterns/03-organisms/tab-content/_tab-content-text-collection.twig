@@ -1,0 +1,16 @@
+{#
+/**
+ * @file
+ * tab-content
+ *
+ * Available variables for tab-content:
+ *    - tab.title [String]: Tab title used in navigation list and as url hash
+ *    - tab.anchor [String/HTML]: Anchor id of the tab
+ *    - tab.text [String/HTML]: Content of the tab
+ *    - tab.isFirst [boolean]: Wether this is the first tab
+ */
+#}
+
+{% for tab in tabs %}
+    {{ tab }}
+{% endfor %}

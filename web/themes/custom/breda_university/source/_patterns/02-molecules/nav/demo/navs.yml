@@ -1,0 +1,27 @@
+navbar_items:
+  - nav_item_text: Onze  Opleidingen
+    nav_item_link_other_classes:
+    - active
+  - nav_item_text: Kom Kennismaken
+    nav_item_link_other_classes:
+  - nav_item_text: Ontdek Breda University
+    nav_item_sub_text: of Applied Sciences
+    nav_item_link_other_classes:
+utility_navbar_items:
+  - nav_item_text: Alumni
+    nav_item_link_other_classes:
+    - active
+  - nav_item_text: Bedrijven
+    nav_item_link_other_classes:
+  - nav_item_text: Onderzoek
+    nav_item_link_other_classes:
+  - nav_item_text: International Students
+    nav_item_link_other_classes:
+  - nav_item_text: Contact
+    nav_item_link_other_classes:
+language_navbar_items:
+  - nav_item_text: NL
+    nav_item_link_other_classes:
+    - active
+  - nav_item_text: EN
+    nav_item_link_classes:

@@ -1,0 +1,41 @@
+{#
+/**
+ * @file
+ * three-column-grid
+ *
+ * Available variables for three-column-grid:
+ *    - three_column_grid.title [String]: Introduction text that is shown lager.
+ *    - three_column_grid.text [String]: Main text column
+ *    - three_column_grid.call_to_action_text [String]: Call to action button text
+ *    - three_column_grid.call_to_action_url [String]: Call to action button url
+ *    - three_column_grid.cards [Array]: Array of cards
+ *    - card.card_title [string]: title
+ *    - card.card_text [string]: string
+ */
+#}
+
+<section class="section three-column-grid module--lg-v  {{ three_column_grid.background_color }} contextual-region">
+    {{ suffix }}
+    <div class="container">
+        <div class="row no-gutters justify-content-between row--header">
+            <div class="col-md-5 pb-4">
+                <h2 class="mb-0">{{ three_column_grid.title}}</h2>
+            </div>
+            <div class="col-md-4"></div>
+            <div class="col-md-3 pb-4 align-self-end text-right">
+            {% set button = {
+                button_element: 'a',
+                button_color: 'bu-anti-flash-white',
+                button_other_classes: 'text-uppercase',
+                button_text: three_column_grid.button_text,
+                button_link: three_column_grid.button_link,
+            } %}
+                {% include "@atoms/button/_button.twig" with button %}
+            </div>
+        </div>
+
+        <div class="row justify-content-start">
+            {{ three_column_grid.cards }}
+        </div>
+    </div>
+</section>

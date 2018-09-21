@@ -1,0 +1,28 @@
+{#
+/**
+ * @file
+ * text-sidebar
+ *
+ * Available variables for text-sidebar:
+ *    - text_column.intro_text [String]: Introduction text that is shown lager.
+ *    - text_column.text [String]: Main text column
+ *    - text_column.call_to_action_text [String]: Call to action button text
+ *    - text_column.call_to_action_url [String]: Call to action url
+ *    - richtext_sidebar_card [HTML]: The card block
+ */
+#}
+
+<section class="section module--lg-v text-sidebar">
+  <div class="container contextual-region">
+    {{ title_prefix }}
+    {{ title_suffix }}
+    <div class="row no-gutters justify-content-between">
+      <div class="col-md-7">
+        {% include "@molecules/_text-column.twig" %}
+      </div>
+      <aside class="col-md-4 text-sidebar__aside">
+        {{ richtext_sidebar_card }}
+      </aside>
+    </div>
+  </div>
+</section>

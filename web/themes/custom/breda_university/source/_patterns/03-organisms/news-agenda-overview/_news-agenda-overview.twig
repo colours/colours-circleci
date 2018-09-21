@@ -1,0 +1,40 @@
+{#
+/**
+ * @file
+ * news-agenda-overview
+ *
+ * Available variables for news-agenda-overview:
+ *    - news_agenda_overview.news_agenda_items [Array]: List of news items
+ */
+#}
+
+<section class="section news_agenda_overview">
+    <div class="container">
+        {# {% include '@molecules/_highlighted-item.twig' %} #}
+        {{ overview.highlighted }}
+    </div>
+    <div class="container module module--lg-v">
+        <div class="row no-gutters justify-content-between">
+            <div class="col-12 col-md-7">
+                {# {% include '@molecules/_news-agenda-list.twig' %} #}
+                <ul class="news-agenda-list">
+                    {{ overview.results }}
+                </ul>
+            </div>
+            <div class="col-12 col-md-5 module--lg-v pl-5 sidebar-border">
+                <h2 class="mb-4">{{ overview.snippet_title }}</h2>
+                <ul class="news-agenda-compact-list">
+                    {{ overview.snippet }}
+                </ul>
+                {# {% include '@molecules/_news-agenda-compact-list.twig' %} #}
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        {{ overview.pager }}
+    </div>
+
+</section>
+
+

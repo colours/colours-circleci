@@ -1,0 +1,17 @@
+{% set text = {
+  background_color : (content.field_background_colour|render|striptags|trim|lower == 'grey') ? 'bg-bu-anti-flash-white' : '',
+  heading_type: 'h2',
+  title: node.field_display_title.value ? node.field_display_title.value|token_replace : '',
+  sub_title: '',
+  category: '',
+  title_left: (content.field_title_position|render|striptags|trim|lower == 'left') ? true : false
+} %}
+
+{% set text_column = {
+  intro_text: content.field_intro_text|field_value,
+  text: content.field_text|field_value,
+  call_to_action_text: '',
+  call_to_action_url: ''
+} %}
+
+{% include '@organisms/_text.twig' with {text: text, text_column: text_column} %}

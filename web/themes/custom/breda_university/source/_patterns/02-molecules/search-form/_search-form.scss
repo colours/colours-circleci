@@ -1,0 +1,60 @@
+@import '../../00-protons/variables';
+@import '../../01-atoms/icon/scss/icons-generated';
+@import '../../01-atoms/icon/scss/icon-mixins';
+
+.search-form {
+    display: inline-block;
+    width: 100%;
+    border-bottom: 4px solid $bu-anti-flash-white;
+
+    @include media-breakpoint-up(lg) {
+        .header & {
+            margin-left: 85px;
+            width: 600px;
+        }
+    }
+
+    .container-inline {
+        width: 100%;
+        @include media-breakpoint-up(lg) {
+            margin-top: $spacer;
+        }
+
+        display: flex;
+        flex-wrap: nowrap;
+    }
+
+    .form-type-textfield,
+    .form-item-text,
+    .js-form-type-textfield {
+        width: calc(100% - 60px);
+    }
+
+    .form-text {
+        width: 100%;
+        max-width: 100%;
+        padding: 15px 0;
+        border-width: 0;
+        line-height: 1.2em;
+        font-family: $font-family-serif;
+        font-size: $font-size-base;
+        color: $bu-indigo;
+    }
+
+    .form-submit,
+    .form-submit:hover,
+    .form-submit:active {
+        @include button-variant(
+            $background: $white,
+            $border: $white,
+            $hover-background: $white,
+            $active-background: $white
+        );
+
+        cursor: pointer;
+        text-indent: -999em;
+        width: 60px;
+        height: 60px;
+        background: $white url(./search.svg) no-repeat 50% 50%;
+    }
+}

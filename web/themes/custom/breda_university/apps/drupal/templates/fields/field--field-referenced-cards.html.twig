@@ -1,0 +1,13 @@
+{% for item in items %}
+    {% if element['#bundle'] == 'block_grid_two_columns' %}
+        <div class="col col-12 col-md-6 module--sm">
+            {{ item.content }}
+        </div>
+    {% elseif element['#bundle'] == 'block_grid_three_columns' %}
+        <div class="col col-12 col-md-4 module--sm">
+            {{ item.content }}
+        </div>
+    {% else %}
+        {{ item.content }}
+    {% endif %}
+{% endfor %}

@@ -1,0 +1,20 @@
+# Define Particle theme's library CSS and JS assets along with dependencies
+core:
+  css:
+    theme:
+      /themes/custom/breda_university/dist/assets/app-drupal-bbs.styles.css:
+        preprocess: true
+  js:
+    /themes/custom/breda_university/dist/assets/app-drupal.js:
+      preprocess: true
+  # see all in Drupal's `core/core.libraries.yml`
+  dependencies:
+    - core/drupal
+    - core/drupalSettings
+
+# Create custom jQuery libraries
+# that'll override the Drupal core jQuery and Underscore libraries
+# See `libraries-override` in breda_university.info.yml
+jquery:
+  js:
+    /themes/custom/breda_university/dist/assets/drupal-jquery.js: { minified: true, weight: -20 }

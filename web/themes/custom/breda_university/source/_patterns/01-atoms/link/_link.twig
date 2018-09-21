@@ -1,0 +1,14 @@
+{#
+  Link
+
+  link_url: String: the URL the link will lead to.  
+  link_text: String: Display text on the link.
+
+  See https://getbootstrap.com/docs/4.0/components/buttons/ for more details
+#}
+
+{% set link_classes = [
+link_other_classes,
+] | sort | join(' ') | trim %}
+
+<a href="{{ link_url }}" class="link {{ link_classes }}">{{ link_text }}</a>

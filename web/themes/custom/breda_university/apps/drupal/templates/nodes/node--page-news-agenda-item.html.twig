@@ -1,0 +1,29 @@
+{{ title_prefix }}
+{{ title_suffix }}
+{% include '@organisms/_text.twig' with {
+    text : {
+        title: content.field_display_title|field_value,
+        sub_title: content.field_date|field_value,
+        heading_type: 'h1',
+        background_color: 'bg-bu-anti-flash-white',
+        title_left: true,
+        category: content.field_news_agenda_category|field_value
+    },
+    text_column: {
+        intro_text: content.field_intro_text|field_value
+    }
+} %}
+
+{{ content.field_content_blocks_top|field_value }}
+
+{% include '@organisms/_text.twig' with {
+    text : {
+        background_color: '',
+        title_left: true,
+    },
+    text_column: {
+        text: content.body|field_value
+    }
+} %}
+
+{{ content.field_content_blocks_bottom|field_value }}

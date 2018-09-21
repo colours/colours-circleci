@@ -1,0 +1,9 @@
+{% include '@organisms/_action-button.twig' with {
+  action_button: {
+    title:               node.field_display_title.value ? node.field_display_title.value|token_replace : '' ,
+    call_to_action_text: node.field_cta_button.value ? content.field_cta_button[0]['#title']|token_replace : '',
+    call_to_action_url:  node.field_cta_button.value ? content.field_cta_button[0]['#url']|render : '',
+    link_items:          link_items,
+  }
+} %}
+

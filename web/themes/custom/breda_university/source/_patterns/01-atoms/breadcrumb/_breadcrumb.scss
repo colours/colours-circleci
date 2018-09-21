@@ -1,0 +1,35 @@
+@import '../../00-protons/variables';
+@import '~bootstrap/scss/breadcrumb';
+@import '../../01-atoms/icon/scss/icons-generated';
+@import '../../01-atoms/icon/scss/icon-mixins';
+
+.breadcrumb {
+    padding: $spacer-md 0;
+    margin-bottom: 0;
+    background-color: transparent;
+    text-transform: uppercase;
+    font-size: $font-size-xs;
+}
+
+.breadcrumb-item {
+    a {
+        text-decoration: none;
+        color: $bu-indigo;
+    }
+
+    + .breadcrumb-item {
+        padding-left: 1rem;
+
+        @include icon('arrow-right');
+
+        &::before {
+            display: inline-block; // Suppress underlining of the separator in modern browsers
+            padding-right: 1rem;
+            width: 1rem;
+            font-size: 9px;
+            font-family: "iconfont";
+            font-style: normal;
+            font-weight: 400;
+        }
+    }
+}

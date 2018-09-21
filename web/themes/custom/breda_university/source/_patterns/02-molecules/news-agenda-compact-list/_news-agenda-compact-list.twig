@@ -1,0 +1,16 @@
+{#
+/**
+ * @file
+ * news-agenda-compact-list
+ *
+ * Available variables for news-agenda-compact-list:
+ *    - news_agenda_items_compact.variable_name [variable_type]: Description of the variable. Example below.
+ *    - news_agenda_items_compact.invert [bool]: When set, colors will be inverted for light display on dark background.
+ */
+#}
+
+<ul class="news-agenda-compact-list">
+    {% for item in news_agenda_items_compact %}
+        {{ item }}
+    {% endfor %}
+</ul>

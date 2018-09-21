@@ -1,0 +1,16 @@
+{{ title_prefix }}
+{{ title_suffix }}
+
+{% include '@organisms/_program-overview-intro.twig' with {
+    program_overview_intro : {
+        title: node.field_display_title.value ? node.field_display_title.value|token_replace : '',
+        intro: content.field_intro_text|field_value,
+        card: content.field_static_card|field_value
+    }
+} %}
+
+{{ content.field_content_blocks_top|field_value }}
+
+{{ content.field_embedded_block|field_value }}
+
+{{ content.field_content_blocks_bottom|field_value }}

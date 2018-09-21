@@ -1,0 +1,64 @@
+// Custom colors
+$bu-orange:             #ee7622 !default;
+$bu-indigo:             #00406b !default;
+$bu-cadet:              #5b6670 !default;
+$bu-black:              #000 !default;
+$bu-bright-cerulean:    #3BB4E5 !default;
+$bu-green:              #76bc20 !default;
+$bu-manatee:            #9da3a9 !default;
+$bu-silver:             #bdc2c6 !default;
+$bu-gainsboro:          #dee0e2 !default;
+$bu-anti-flash-white:   #eeeff0 !default;
+$bu-white:              #ffffff !default;
+$bu-invalid:            #fce4d3 !default;
+
+// Bootstrap overrides
+// Add colors to $theme-colors var here. Find other vars to override at ~bootstrap/scss/_variables.scss
+// Be sure to add new colors in quotes.
+$theme-colors: (
+    'primary': $bu-indigo,
+    'secondary': white,
+    'light': white,
+    'bu-orange': $bu-orange,
+    'bu-indigo': $bu-indigo,
+    'bu-cadet': $bu-cadet,
+    'bu-black': $bu-black,
+    'bu-bright-cerulean': $bu-bright-cerulean,
+    'bu-green': $bu-green,
+    'bu-manatee': $bu-manatee,
+    'bu-silver': $bu-silver,
+    'bu-gainsboro': $bu-gainsboro,
+    'bu-anti-flash-white': $bu-anti-flash-white,
+);
+
+@if $theme==bbs or $theme==hardwell {
+    // Custom colors for Breda Business School
+    $bu-orange:             #3CB4E5;
+    $bu-indigo:             #00416B;
+    $bu-cadet:              #5b6670;
+    $bu-black:              #000;
+    $bu-bright-cerulean:    #EE7623;
+    $bu-green:              #76bc20;
+    $bu-manatee:            #9da3a9;
+    $bu-silver:             #bdc2c6;
+    $bu-gainsboro:          #dee0e2;
+    $bu-anti-flash-white:   #eeeff0;
+    $bu-invalid:            #fce4d3;
+
+    $theme-colors: (
+        'primary': $bu-indigo,
+        'secondary': white,
+        'light': white,
+        'bu-orange': $bu-orange,
+        'bu-indigo': $bu-indigo,
+        'bu-cadet': $bu-cadet,
+        'bu-black': $bu-black,
+        'bu-bright-cerulean': $bu-bright-cerulean,
+        'bu-green': $bu-green,
+        'bu-manatee': $bu-manatee,
+        'bu-silver': $bu-silver,
+        'bu-gainsboro': $bu-gainsboro,
+        'bu-anti-flash-white': $bu-anti-flash-white,
+    );
+
+}

@@ -1,0 +1,18 @@
+{#
+/**
+ * @file
+ * search-result
+ *
+ * Available variables for search-result:
+ * result.title [String]: Name of the result.
+ * result.url [String]: Url of the result detail page.
+ * result.text [Array]: List of tags added to a result.
+ */
+#}
+
+<li class="search-result__list-item">
+    <a href="{{ result.url }}" class="search-result__link">
+        <h4 class="result__title">{{ result.title|raw }}</h4>
+        <p class="result__text">{{ result.text|raw }}</p>
+    </a>
+</li>

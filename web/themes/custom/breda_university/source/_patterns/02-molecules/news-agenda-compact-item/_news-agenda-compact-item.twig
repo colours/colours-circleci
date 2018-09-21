@@ -1,0 +1,20 @@
+{#
+/**
+ * @file
+ * news-agenda-compact-item
+ *
+ * Available variables for news-agenda-compact-item:
+ *    - variable_name [variable_type]: Description of the variable. Example below.
+ */
+#}
+
+<li class="news-agenda-compact-item">
+    <div class="contextual-region">
+        {{ title_prefix }}
+        {{ title_suffix }}
+        <a href="{{ url }}" class="link">
+            <time datetime="{{ date }}">{{ date }}</time>
+            <h3 class="item__title">{{ title }}</h3>
+        </a>
+    </div>
+</li>

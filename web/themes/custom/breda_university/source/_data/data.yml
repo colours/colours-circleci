@@ -1,0 +1,931 @@
+pl: true
+BUILD_TARGET: pl
+paths:
+  assets: "../../../assets"
+bodyClass: 'pl pl-loading'
+randomNumber: Faker.randomNumber(8)
+title: Faker.words(2, true)
+cardimage: Faker.imageURL(318, 180, 'abstract', true, 'Some Text', true)
+site_title: Faker.words(2, true)
+site_slogan: Faker.words(5, true)
+headline:
+  two: Faker.words(2, true)
+  short: Faker.words(3, true)
+  medium: Faker.words(7, true)
+excerpt:
+  short: Faker.sentence
+  medium: Faker.sentences(2, true)
+  long: Faker.paragraph
+description: Faker.paragraphs(2, true)
+url: http://example.com
+name:
+  titleMale: Faker.title('male')
+  titleFemale: Faker.title('female')
+  first: Faker.firstName
+  middle: Faker.firstName
+  last: Faker.lastName
+email: Faker.email
+username: Faker.userName
+year:
+  long: Faker.year
+  short: Faker.numberBetween(01, 99)
+month:
+  long: Faker.monthName
+  digit: Faker.month
+dayofweek: Faker.dayOfWeek
+day: Faker.numberBetween(1, 30)
+hour:
+  long: Faker.numberBetween(1, 99)
+  short: Faker.numberBetween(1, 9)
+  ampm: Faker.amPm
+minute: Faker.numberBetween(1, 59)
+seconds: Faker.numberBetween(1, 59)
+hide_navigation: false
+breadcrumb:
+  - text: 'Home'
+    url: '/home'
+  - text: 'First'
+    url: '/first'
+  - text: 'Second'
+    url: '/second'
+
+navbar_other_classes:
+  - navbar-expand-lg
+  - navbar-light
+navbar_id: navbarSupportedContent
+
+navbar_items:
+  - nav_item_text: Onze  Opleidingen
+    nav_item_link_other_classes:
+    - active
+  - nav_item_text: Kom Kennismaken
+    nav_item_link_other_classes:
+  - nav_item_text: Ontdek Breda University
+    nav_item_sub_text: of Applied Sciences
+    nav_item_link_other_classes:
+utility_navbar_items:
+  - nav_item_text: Alumni
+    nav_item_link_other_classes:
+    - active
+  - nav_item_text: Bedrijven
+    nav_item_link_other_classes:
+  - nav_item_text: Onderzoek
+    nav_item_link_other_classes:
+  - nav_item_text: International Students
+    nav_item_link_other_classes:
+  - nav_item_text: Contact
+    nav_item_link_other_classes:
+language_navbar_items:
+  - nav_item_text: NL
+    nav_item_link_other_classes:
+    - active
+  - nav_item_text: EN
+    nav_item_link_classes:
+footer_navbar_items:
+  -
+    title: Opleidingen
+    url: '#'
+    in_active_trail: true
+    below:
+      - title: Tourisme
+        url: '#'
+      - title: Games
+        url: '#'
+      - title: Facility
+        url: '#'
+      - title: Hotel
+        url: '#'
+      - title: Logistiek
+        url: '#'
+      - title: Leisure & Events
+        url: '#'
+      - title: Build environment
+        url: '#'
+  -
+    title: Meer Breda University
+    url: '#'
+    below:
+      - title: Faker.words(3, true)
+        url: '#'
+      - title: Faker.words(3, true)
+        url: '#'
+      - title: Faker.words(3, true)
+        url: '#'
+      - title: Faker.words(3, true)
+        url: '#'
+      - title: Faker.words(3, true)
+        url: '#'
+  -
+    title: Services
+    url: '#'
+    below:
+      - title: Faker.words(3, true)
+        url: '#'
+      - title: Faker.words(3, true)
+        url: '#'
+      - title: Faker.words(3, true)
+        url: '#'
+      - title: Faker.words(3, true)
+        url: '#'
+      - title: Faker.words(3, true)
+        url: '#'
+      - title: Faker.words(3, true)
+        url: '#'
+footer_info_navbar_items:
+  -
+    title: Opleidingen
+    url: '#'
+  -
+    title: Faker.words(3, true)
+    url: '#'
+  -
+    title: Faker.words(3, true)
+    url: '#'
+
+footer:
+  slogan: 'Powered by <a href="http://patternlab.io/" target="_blank">Pattern Lab</a>'
+subscribe_form:
+  'include()':
+    'pattern': 'molecules-subscribe-form'
+
+article_title: 'Lucidus'
+article_body: '<p>Cogo haero jus pala patria proprius turpis valde wisi. Eu feugiat laoreet si usitas valde vulputate. Bene dolus gilvus hos pala quibus ulciscor voco. Ad camur incassum ymo.</p>
+              <p>Caecus esca iustum lobortis nimis quibus uxor. Aliquip aptent conventio illum singularis turpis ullamcorper validus. Appellatio illum luptatum secundum suscipere. Amet dolor duis esca pecus plaga verto. Brevitas caecus huic melior modo nibh nunc. Aptent at bene exputo loquor os. Aliquam cui diam esse ideo melior minim premo quis vicis. Abdo accumsan autem. Cui jugis quia tincidunt. Appellatio nibh quidne uxor.</p>
+              <p>Cui incassum loquor paratus ratis refero uxor volutpat. Adipiscing consequat enim erat imputo magna neque probo rusticus secundum. Augue commodo consequat conventio dolor elit minim molior similis torqueo. Et gemino interdico nutus praesent probo scisco tamen utrum. Amet feugiat odio pneum quidem sagaciter voco. Hendrerit minim quibus si.</p>
+              <p>Haero lobortis odio proprius. Exputo incassum iriure. Similis validus vel. Acsi eligo eros eum exerci feugiat haero huic oppeto quadrum. Capto luctus ludus neo quis sit ulciscor.</p>
+              <p>Consequat dignissim genitus oppeto. Laoreet luctus os proprius sino sit tation utrum. Commoveo interdico melior oppeto ratis tincidunt. Capto minim natu ulciscor usitas. Molior sudo ut veniam. Abluo aliquip cogo gilvus modo quae ratis singularis ullamcorper vereor.</p>
+              <p>Blandit cui hos mauris. Causa elit esse et paulatim. Abdo cogo dolor enim inhibeo ludus mauris saluto vindico. Commoveo distineo esse gravis ille lobortis occuro oppeto ulciscor veniam.</p>
+              <p>Camur ea elit facilisis haero interdico loquor venio. Accumsan antehabeo decet imputo os. Aptent esse eu hos luctus nobis similis ullamcorper. Appellatio comis damnum ibidem praesent quia quis verto. Aptent damnum duis esca ibidem ludus nulla pneum velit venio. Abigo at eum meus pertineo ratis secundum ulciscor volutpat vulputate. Conventio cui ea exputo inhibeo iriure magna mauris neque ratis.</p>
+              <p>Conventio damnum eros pala pertineo velit verto. Adipiscing eum jus pertineo tum turpis ulciscor ullamcorper vereor volutpat. Genitus importunus lenis modo natu nimis nunc populus te.</p>
+              <p>Singularis sit torqueo tum validus. Fere quis vindico. Duis iusto occuro paratus qui scisco valetudo. Abdo decet dolor ea erat ex nulla ratis vel veniam. Blandit diam duis exerci proprius quidne tation venio vindico. Abbas aliquam commodo iaceo pagus quis sed tego. Feugiat pala sagaciter turpis ullamcorper vero. Ibidem neo ullamcorper vereor. Ad amet camur consectetuer dolor facilisis feugiat ideo quibus.</p>
+              <p>Dolore erat huic iusto melior pneum. Gemino quibus singularis. Bene comis obruo quis wisi. Hendrerit illum imputo lucidus olim os. Ex natu tamen. Diam dolor inhibeo lenis macto mauris validus. Acsi pagus pala paratus pecus quis sed sudo.</p>
+              <p>Brevitas commoveo jus. Accumsan commoveo hos imputo molior odio proprius te. Caecus luctus neque nutus paratus. Brevitas capto euismod ex jus ludus mauris mos tego wisi.</p>
+              <p>Antehabeo appellatio humo interdico olim os qui. Aptent dolor gravis melior oppeto si veniam vindico. Imputo secundum singularis sit voco. Acsi cui ille lucidus molior praemitto qui quidne tamen. Euismod nulla plaga virtus. Accumsan acsi dolore et euismod quis. Caecus et lobortis tamen. Abico blandit diam huic plaga ratis similis velit veniam. Cogo patria refero.</p>'
+article_author_name: 'Joe P. Author'
+article_date: '11/19/2017 - 08:30'
+article_tags:
+  -
+    word: 'Lorem'
+    url: '#'
+  -
+    word: 'Ipsum'
+    url: '#'
+  -
+    word: 'Dolor'
+    url: '#'
+
+text_column:
+  intro_text: '<p>Je wordt opgeleid tot logistiek manager. In deze opleiding ligt de nadruk op de financieel-economische aspecten en marketing van logistieke processen. Heb je meer interesse in de techniek van het opslaan en transporteren van goederen? Dan past de opleiding Logistics Engineering waarschijnlijk beter bij je.</p>'
+  text: '<h3>Jouw carrière in de logistieke wereld</h3><p>Als afgestudeerde ben je een kei in het verbinden van logistieke processen, goederenstromen en communicatie. Je start meestal in een junior- of assistentfunctie en kunt doorgroeien naar een managementpositie. Je kunt bijvoorbeeld aan de slag gaan als logistiek analist, planner, consultant ICT, inkoopmanager, supply chain manager of projectmanager. Transportbedrijven, productiebedrijven, multinationals en vele andere organisaties zijn altijd op zoek naar logistieke talenten.</p>'
+  call_to_action_text: 'Download brochure'
+  call_to_action_url: '#'
+sidebar:
+  card:
+    "include()":
+      pattern: "molecules-card-blue"
+      with:
+        card_title: Faker.words(2, true)
+        card_text: Faker.sentence(2, true)
+        button:
+          button_text: Faker.words(2, true)
+          button_link: '#'
+    title: 'Kom kennismaken'
+    text: '<p><strong>Open dag</strong><br/>Zaterdag 10 november</p>
+          <p><strong>Kennismakingsdagen</strong><br/>Vrijdag 9 november<br/>Vrijdag 16 november</p>'
+    call_to_action_text: 'Meer mogelijkheden'
+    call_to_action_url: '#'
+
+action_button:
+  title: 'Praktische informatie'
+  call_to_action_text: 'Direct aanmelden'
+  call_to_action_url: '#'
+  link_items:
+    -
+      title: 'Toelatingsvoorwaarden'
+      url: '#'
+    -
+      title: 'Aanmeldprocedure en studiekeuzecheck'
+      url: '#'
+    -
+      title: 'Jaarrooster'
+      url: '#'
+    -
+      title: 'Bindend Studie Advies'
+      url: '#'
+    -
+      title: 'Opleidingsgegevens'
+      url: '#'
+    -
+      title: 'Studiekosten'
+      url: '#'
+
+search_form: 'molecules-search-form'
+
+header_slider:
+  image:
+    "include()":
+      pattern: "atoms-picture"
+      with:
+          img_element: '<img src="https://source.unsplash.com/collection/397119/1148x400" />'
+  title: 'Faker.words(3, true)'
+  heading_type: 'h1'
+  intro_text: Faker.paragraph(1, true)
+  button_link: '#'
+  button_text: 'Faker.words(3, true)'
+
+tab_content_title: 'De opbouw van de studie'
+tab_content_links:
+  "include()":
+    pattern: "organisms-tab-content-link-collection"
+    with:
+      tabs:
+        -
+          "include()":
+            pattern: "organisms-tab-content-link"
+            with:
+              title: 'Studieprogramma'
+              isFirst: true
+              anchor: 'studieprogramma'
+        -
+          "include()":
+            pattern: "organisms-tab-content-link"
+            with:
+              title: 'Accenten'
+              anchor: 'accenten'
+        -
+          "include()":
+            pattern: "organisms-tab-content-link"
+            with:
+              title: 'Studiebelasting en studiecoaching'
+              anchor: 'studiebelasting-en-studiecoaching'
+tab_content_text:
+  "include()":
+    pattern: "organisms-tab-content-text-collection"
+    with:
+      tabs:
+        -
+          "include()":
+            pattern: "organisms-tab-content-text"
+            with:
+              title: 'Studieprogramma'
+              isFirst: true
+              anchor: 'studieprogramma'
+              text: '<h3>Studieprogramma</h3><p>Tijdens de opleiding ontwikkel je allerlei <a href="#">competenties</a> die je nodig hebt om later je werk goed uit te kunnen voeren. Deze competenties ontwikkel je o.a. door te werken aan projecten. Naast projecten volg je hoor-, gast- en werkcolleges, trainingen, cursussen en krijg je coachingsgesprekken. Ook ga je op stage en neem je deel aan excursies en studiereizen. Gedurende de hele opleiding staat de praktijk centraal. De projecten en opdrachten komen uit de praktijk. Hoewel de opleiding Nederlandstalig is, is het mogelijk dat je één of meer vakken, minors of gastcolleges in het Engels volgt. Daarnaast kan een gedeelte van de gebruikte literatuur Engelstalig zijn.</p><p>Meer informatie over wat je kunt verwachten per jaar:</p>'
+        -
+          "include()":
+            pattern: "organisms-tab-content-text"
+            with:
+              title: 'Accenten'
+              anchor: 'accenten'
+              text: '<h3>Accenten</h3><p>Lorem ipsum dolor sit amet consectetur adipiscing elit et pharetra convallis, pellentesque netus molestie curae nec blandit sociis laoreet tempor congue quam, in facilisis donec eros vel duis leo non ultricies. Auctor pharetra vehicula egestas magnis curabitur metus praesent ut phasellus nullam volutpat, parturient semper elementum litora lorem quisque etiam suscipit morbi convallis sagittis, luctus eget iaculis taciti porta conubia lectus eros himenaeos facilisis. Eget etiam per pulvinar id duis metus vitae ultricies malesuada arcu, nam hendrerit lectus dis curabitur mus rutrum nisl faucibus, porttitor cum sit elementum nullam litora nostra justo suspendisse. Rhoncus et felis facilisis eget orci diam taciti malesuada, venenatis semper nostra luctus dui interdum maecenas hac, porttitor integer mattis vivamus duis quisque lacinia. Enim condimentum class etiam pretium lorem porttitor ligula turpis est proin sem dignissim faucibus, egestas commodo pellentesque iaculis pharetra odio elit sit praesent et amet rutrum. Odio felis sollicitudin quisque mollis dignissim nostra ligula sociis venenatis tincidunt in sem nisl non, risus ultricies pharetra commodo dolor praesent mauris amet mus morbi netus penatibus.</p>'
+        -
+          "include()":
+            pattern: "organisms-tab-content-text"
+            with:
+              title: 'Studiebelasting en studiecoaching'
+              anchor: 'studiebelasting-en-studiecoaching'
+              text: '<h3>Studiebelasting en studiecoaching</h3><p>Lorem ipsum dolor sit amet consectetur adipiscing elit et pharetra convallis, pellentesque netus molestie curae nec blandit sociis laoreet tempor congue quam, in facilisis donec eros vel duis leo non ultricies. Auctor pharetra vehicula egestas magnis curabitur metus praesent ut phasellus nullam volutpat, parturient semper elementum litora lorem quisque etiam suscipit morbi convallis sagittis, luctus eget iaculis taciti porta conubia lectus eros himenaeos facilisis. Eget etiam per pulvinar id duis metus vitae ultricies malesuada arcu, nam hendrerit lectus dis curabitur mus rutrum nisl faucibus, porttitor cum sit elementum nullam litora nostra justo suspendisse. Rhoncus et felis facilisis eget orci diam taciti malesuada, venenatis semper nostra luctus dui interdum maecenas hac, porttitor integer mattis vivamus duis quisque lacinia. Enim condimentum class etiam pretium lorem porttitor ligula turpis est proin sem dignissim faucibus, egestas commodo pellentesque iaculis pharetra odio elit sit praesent et amet rutrum. Odio felis sollicitudin quisque mollis dignissim nostra ligula sociis venenatis tincidunt in sem nisl non, risus ultricies pharetra commodo dolor praesent mauris amet mus morbi netus penatibus.Lorem ipsum dolor sit amet consectetur adipiscing elit, nam mollis posuere lacinia purus est habitasse, ultrices quam senectus magna erat libero. Rhoncus dictumst tempus litora erat molestie eleifend congue aptent accumsan vestibulum cras facilisi tortor velit, class suscipit praesent urna posuere lectus torquent nullam lacus vel in donec. Curabitur nascetur mollis suscipit ipsum ut malesuada vehicula tempor ultrices scelerisque, adipiscing maecenas porttitor torquent potenti cum augue dui faucibus, pellentesque neque arcu nisi condimentum lacus cras egestas ac.</p>'
+
+three_column_grid:
+  title: Faker.words(7, true)
+  button_text: 'Meer nieuws & Agenda'
+  button_link: '#'
+  background_color: 'bg-bu-anti-flash-white'
+  cards:
+    "include()":
+      pattern: "organisms-three-column-grid-columns"
+      with:
+        cards:
+          -
+            "include()":
+              pattern: "molecules-card-column"
+              with:
+                layout: "card--white"
+                columns: 3
+                card_category: Faker.words(1, true)
+                card_title: Faker.words(5, true)
+                card_text: Faker.sentences(2, true)
+                button:
+                  button_text: Faker.words(2, true)
+                  button_link: '#'
+          -
+            "include()":
+              pattern: "molecules-card-column"
+              with:
+                layout: "card--orange"
+                columns: 3
+                card_category: Faker.words(1, true)
+                card_title: Faker.words(5, true)
+                card_text: Faker.sentences(2, true)
+                button:
+                  button_text: Faker.words(2, true)
+                  button_link: '#'
+          -
+            "include()":
+              pattern: "molecules-card-column"
+              with:
+                layout: "card--white"
+                columns: 3
+                card_title: Faker.words(3, true)
+                card_text: Faker.sentences(2, true)
+                button:
+                  button_text: Faker.words(2, true)
+                  button_link: '#'
+          -
+            "include()":
+              pattern: "molecules-card-column"
+              with:
+                layout: "card--white"
+                columns: 3
+                card_title: Faker.words(3, true)
+                card_text: Faker.sentences(2, true)
+                button:
+                  button_text: Faker.words(2, true)
+                  button_link: '#'
+          -
+            join():
+              -
+                  "<div class=\"col col-12 col-md-4 module--sm\">"
+              -
+                "include()":
+                  pattern: "molecules-card-quote"
+                  with:
+                    layout: "card--quote"
+                    quote_text: Faker.sentences(1, true)
+                    quote_author_name: Faker.firstNameFemale
+                    quote_author_role: Faker.words(3, true)
+                    quote_author_job_description: Faker.words(3, true)
+                    quote_author_graduation_year: Faker.year
+                    quote_author_image: 'https://source.unsplash.com/hvnDXVwWRlo/200x200'
+              -
+                "</div>"
+          -
+            "include()":
+              pattern: "molecules-card-column"
+              with:
+                layout: "card--blue"
+                columns: 3
+                card_category: Faker.words(1, true)
+                card_title: Faker.words(5, true)
+                card_text: Faker.sentences(2, true)
+                button:
+                  button_text: Faker.words(2, true)
+                  button_link: '#'
+          -
+            "include()":
+              pattern: "molecules-card-column"
+              with:
+                layout: "card--white"
+                columns: 3
+                card_category: Faker.words(1, true)
+                card_title: Faker.words(5, true)
+                card_text: Faker.sentences(2, true)
+                button:
+                  button_text: Faker.words(2, true)
+                  button_link: '#'
+          -
+            join():
+              -
+                  "<div class=\"col col-12 col-md-4 module--sm\">"
+              -
+                "include()":
+                  pattern: "molecules-card-quote"
+                  with:
+                    layout: "card--quote"
+                    quote_text: Faker.sentences(1, true)
+                    quote_author_name: Faker.firstNameMale
+                    quote_author_role: Faker.words(3, true)
+                    quote_author_job_description: Faker.words(3, true)
+                    quote_author_graduation_year: Faker.year
+                    quote_author_image: 'https://source.unsplash.com/6anudmpILw4/200x200'
+              -
+                "</div>"
+
+slider:
+  card_main:
+    "include()":
+      pattern: "molecules-card-orange"
+      with:
+        card_title: Faker.words(3, true)
+        card_text: Faker.sentences(2, true)
+        button:
+          button_text: Faker.words(2, true)
+          button_link: '#'
+  slide_collection: "organisms-slide-collection"
+slides:
+  -
+    picture:
+      "include()":
+        pattern: "atoms-picture"
+        with:
+          img_element: '<img src="https://source.unsplash.com/collection/620529/980x520" />'
+    card:
+      "include()":
+        pattern: "molecules-card-grey"
+        with:
+          card_title: Faker.words(2, true)
+          card_text: Faker.sentences(2, true)
+          button:
+            button_text: Faker.words(2, true)
+            button_link: '#'
+  -
+    picture:
+      "include()":
+        pattern: "atoms-picture"
+        with:
+          img_element: '<img src="https://source.unsplash.com/collection/1478765/980x520" />'
+    card:
+      "include()":
+        pattern: "molecules-card-grey"
+        with:
+          card_title: Faker.words(2, true)
+          card_text: Faker.sentences(2, true)
+          button:
+            button_text: Faker.words(2, true)
+            button_link: '#'
+  -
+    picture:
+      "include()":
+        pattern: "atoms-picture"
+        with:
+          img_element: '<img src="https://source.unsplash.com/collection/1658711/980x520" />'
+    card:
+      "include()":
+        pattern: "molecules-card-grey"
+        with:
+          card_title: Faker.words(2, true)
+          card_text: Faker.sentences(2, true)
+          button:
+            button_text: Faker.words(2, true)
+            button_link: '#'
+
+two_column_grid:
+  title: Faker.words(7, true)
+  button_text: 'Meer nieuws & Agenda'
+  button_link: '#'
+  cards:
+    "include()":
+      pattern: "organisms-two-column-grid-columns"
+      with:
+        cards:
+          -
+            "include()":
+              pattern: "molecules-card-column"
+              with:
+                columns: 2
+                layout: 'card--grey--bi'
+                card_category: Faker.words(1, true)
+                card_title: Faker.words(3, true)
+                card_text: Faker.sentences(2, true)
+                card_image: 'https://source.unsplash.com/collection/1555321/480x480?v=2'
+                button:
+                  button_text: Faker.words(2, true)
+                  button_link: '#'
+          -
+            "include()":
+              pattern: "molecules-card-column"
+              with:
+                columns: 2
+                layout: 'card--orange'
+                card_category: Faker.words(1, true)
+                card_title: Faker.words(5, true)
+                card_text: Faker.sentences(2, true)
+                button:
+                  button_text: Faker.words(2, true)
+                  button_link: '#'
+          -
+            "include()":
+              pattern: "molecules-card-column"
+              with:
+                columns: 2
+                layout: 'card--blue--bi'
+                card_title: Faker.words(3, true)
+                card_text: Faker.sentences(2, true)
+                card_image: 'https://source.unsplash.com/collection/1478765/480x480'
+                button:
+                  button_text: Faker.words(2, true)
+                  button_link: '#'
+          -
+            "include()":
+              pattern: "molecules-card-column"
+              with:
+                columns: 2
+                layout: 'card--white'
+                card_title: Faker.words(3, true)
+                card_text: Faker.sentences(2, true)
+                button:
+                  button_text: Faker.words(2, true)
+                  button_link: '#'
+          -
+            "include()":
+              pattern: "molecules-card-column"
+              with:
+                columns: 2
+                layout: 'card--grey'
+                card_category: Faker.words(1, true)
+                card_title: Faker.words(5, true)
+                card_text: Faker.sentences(2, true)
+                button:
+                  button_text: Faker.words(2, true)
+                  button_link: '#'
+          -
+            "include()":
+              pattern: "molecules-card-column"
+              with:
+                columns: 2
+                layout: 'card--blue'
+                card_category: Faker.words(1, true)
+                card_title: Faker.words(5, true)
+                card_text: Faker.sentences(2, true)
+                button:
+                  button_text: Faker.words(2, true)
+                  button_link: '#'
+
+homepage_header:
+  picture:
+    img_element: '<img src="https://source.unsplash.com/RmO3If0EYHM/1148x494" />'
+  primary_links:
+    join():
+      - "<div class=\"col col-12 col-md-6 col-lg-3\">"
+      - "include()":
+          pattern: "molecules-card-simple"
+          with:
+            card_link: '#'
+            card_link_text: 'Faker.words(2, true)'
+            card_text: '<ul><li>Lorem ipsum dolor</li><li>Lorem ipsum dolor sit amet</li><li>Amet consectetur adipiscing</li><li>Amet consectetur</li></ul>'
+      - "</div>"
+      - "<div class=\"col col-12 col-md-6 col-lg-3\">"
+      - "include()":
+          pattern: "molecules-card-simple"
+          with:
+            card_link: '#'
+            card_link_text: 'Faker.words(2, true)'
+            card_text: Faker.sentences(1, true)
+      - "</div>"
+      - "<div class=\"col col-12 col-md-6 col-lg-3\">"
+      - "include()":
+          pattern: "molecules-card-simple"
+          with:
+            card_link: '#'
+            card_link_text: 'Faker.words(2, true)'
+            card_text: Faker.sentences(1, true)
+      - "</div>"
+  link_list:
+    join():
+      - "<div class=\"col col-12 col-md-6 col-lg-3\">"
+      - "include()":
+          pattern: "molecules-card-link-list"
+          with:
+            card_title: Faker.words(2, true)
+            card_link_items:
+              -
+                title: 'Bedrijven'
+                url: '#'
+              -
+                title: 'Onderzoek'
+                url: '#'
+              -
+                title: 'Alumni'
+                url: '#'
+              -
+                title: 'Business school'
+                url: '#'
+              -
+                title: 'International students'
+                url: '#'
+      - "</div>"
+richtext_sidebar_card:
+  "include()":
+    pattern: "molecules-card-blue"
+    with:
+      card_title: Faker.words(3, true)
+      card_text: Faker.sentences(3, true)
+      button:
+        button_text: Faker.words(1, true)
+        button_link: '#'
+
+text_with_media:
+  heading_type: 'h1'
+  title: Faker.words(6, true)
+  text: Faker.sentences(10, true)
+  align_media_right: true
+  media:
+    "include()":
+        pattern: "atoms-picture"
+        with:
+          img_element: '<img src="https://source.unsplash.com/collection/620529/630x485" />'
+text:
+  background_color: 'bg-bu-anti-flash-white'
+  title: Faker.words(6, true)
+  title_left: true
+  sub_title: '16 juni 2018'
+  category: 'Games'
+  text:
+    'include()':
+      pattern: 'molecules-text-column'
+
+program_overview_intro:
+  title: Faker.words(4, true)
+  intro: Faker.sentences(4, true)
+  card:
+    "include()":
+      pattern: "molecules-card-orange"
+      with:
+        card_title: Faker.words(2, true)
+        card_text: Faker.sentence(2, true)
+        button:
+          button_text: Faker.words(2, true)
+          button_link: '#'
+
+link_grid:
+  title: 'Praktische informatie'
+  button_text: 'Direct aanmelden'
+  button_link: '#'
+  link_items:
+    -
+      title: 'Toelatingsvoorwaarden'
+      url: '#'
+    -
+      title: 'Aanmeldprocedure en studiekeuzecheck'
+      url: '#'
+    -
+      title: 'Jaarrooster'
+      url: '#'
+    -
+      title: 'Bindend Studie Advies'
+      url: '#'
+    -
+      title: 'Opleidingsgegevens'
+      url: '#'
+    -
+      title: 'Studiekosten'
+      url: '#'
+
+program_overview:
+  filter_form:
+    "include()":
+      "pattern": "organisms-program-filter"
+  categories:
+    -
+      title: Faker.words(2, true)
+      programs:
+        -
+          title: Faker.words(8, true)
+          url: '#'
+          tags:
+            -
+              title: 'NL'
+            -
+              title: 'Bachelor'
+        -
+          title: Faker.words(8, true)
+          url: '#'
+          tags:
+            -
+              title: 'NL'
+            -
+              title: 'Bachelor'
+        -
+          title: Faker.words(8, true)
+          url: '#'
+          tags:
+            -
+              title: 'EN'
+            -
+              title: 'Master'
+    -
+      title: Faker.words(1, true)
+      programs:
+        -
+          title: Faker.words(8, true)
+          url: '#'
+          tags:
+            -
+              title: 'NL'
+            -
+              title: 'Bachelor'
+        -
+          title: Faker.words(8, true)
+          url: '#'
+          tags:
+            -
+              title: 'NL'
+            -
+              title: 'Bachelor'
+        -
+          title: Faker.words(8, true)
+          url: '#'
+          tags:
+            -
+              title: 'NL'
+            -
+              title: 'Master'
+        -
+          title: Faker.words(8, true)
+          url: '#'
+          tags:
+            -
+              title: 'EN'
+            -
+              title: 'Master'
+    -
+      title: Faker.words(2, true)
+      programs:
+        -
+          title: Faker.words(8, true)
+          url: '#'
+          tags:
+            -
+              title: 'NL'
+            -
+              title: 'Bachelor'
+        -
+          title: Faker.words(8, true)
+          url: '#'
+          tags:
+            -
+              title: 'NL'
+            -
+              title: 'Bachelor'
+        -
+          title: Faker.words(8, true)
+          url: '#'
+          tags:
+            -
+              title: 'NL'
+            -
+              title: 'Master'
+        -
+          title: Faker.words(8, true)
+          url: '#'
+          tags:
+            -
+              title: 'NL'
+            -
+              title: 'Bachelor'
+        -
+          title: Faker.words(8, true)
+          url: '#'
+          tags:
+            -
+              title: 'NL'
+            -
+              title: 'Master'
+        -
+          title: Faker.words(8, true)
+          url: '#'
+          tags:
+            -
+              title: 'EN'
+            -
+              title: 'Master'
+    -
+      title: Faker.words(1, true)
+      programs:
+        -
+          title: Faker.words(8, true)
+          url: '#'
+          tags:
+            -
+              title: 'NL'
+            -
+              title: 'Bachelor'
+        -
+          title: Faker.words(8, true)
+          url: '#'
+          tags:
+            -
+              title: 'NL'
+            -
+              title: 'Bachelor'
+        -
+          title: Faker.words(8, true)
+          url: '#'
+          tags:
+            -
+              title: 'NL'
+            -
+              title: 'Master'
+        -
+          title: Faker.words(8, true)
+          url: '#'
+          tags:
+            -
+              title: 'EN'
+            -
+              title: 'Master'
+
+search_result:
+  search_form: 'molecules-search-form'
+  search_filter: 'organisms-search-filter'
+  number_of_results: 4
+  search_string: Faker.words(3, true)
+  results:
+    "include()":
+      pattern: "organisms-search-result-row"
+      with:
+        result:
+          title: Faker.words(5, true)
+          url: '#'
+          text: 'Pellentesque commodo eros a enim. <strong>Vestibulum</strong> turpis sem, aliquet eget, lobortis pellentesque, rutrum eu, nisl. Sed libero. Aliquam erat volutpat. Etiam vitae tortor. Morbi vestibulum volutpat enim. Aliquam eu logistiek. Nunc sed turpis. Sed mollis, eros et ultrices tempus, mauris ipsum aliquam libero, non adipiscing dolor urna a orci. Nulla porta dolor. Class aptent taciti sociosqu ad litora torquent per <strong>vestibulum</strong> conubia nostra, per inceptos hymenaeos.'
+
+pager:
+  "include()":
+    pattern: "molecules-pagination"
+    with:
+      current: 4
+      items:
+        first:
+          href: '#'
+        previos:
+          href: '#'
+        next:
+          href: '#'
+        last:
+          href: '#'
+        pages:
+          1:
+            href: '#'
+          2:
+            href: '#'
+          3:
+            href: '#'
+          4:
+            href: '#'
+          5:
+            href: '#'
+          6:
+            href: '#'
+
+intro:
+  title: Faker.words(3, true)
+
+overview:
+  highlighted: "molecules-highlighted-item"
+  results: "molecules-news-agenda-list"
+  snippet: "molecules-news-agenda-compact-list"
+
+highlighted_item:
+  title: Faker.words(6, true)
+  date: '16 juni 2018'
+  text: '<p>Lorem ipsum dolor sit amet consectetur adipiscing elit nec, proin morbi sagittis dapibus imperdiet mattis habitasse, suspendisse etiam curabitur nam cum commodo tincidunt.</p>'
+  url: '#'
+  media:
+    "include()":
+        pattern: "atoms-picture"
+        with:
+          img_element: '<img src="https://source.unsplash.com/collection/620529/630x485" />'
+
+news_agenda_items:
+  -
+    "include()":
+      pattern: "molecules-news-agenda-item"
+      with:
+        title: Faker.words(6, true)
+        date: '8 juni 2018'
+        text: '<p>Lorem ipsum dolor sit amet consectetur adipiscing elit nec, proin morbi sagittis dapibus imperdiet mattis habitasse, suspendisse etiam curabitur nam cum commodo tincidunt.</p>'
+        url: '#'
+  -
+    "include()":
+      pattern: "molecules-news-agenda-item"
+      with:
+        title: Faker.words(6, true)
+        date: '8 juni 2018'
+        text: '<p>Lorem ipsum dolor sit amet consectetur adipiscing elit nec, proin morbi sagittis dapibus imperdiet mattis habitasse, suspendisse etiam curabitur nam cum commodo tincidunt.</p>'
+        url: '#'
+        media:
+          "include()":
+              pattern: "atoms-picture"
+              with:
+                img_element: '<img src="https://source.unsplash.com/collection/620529/230x230" />'
+  -
+    "include()":
+      pattern: "molecules-news-agenda-item"
+      with:
+        title: Faker.words(6, true)
+        date: '8 juni 2018'
+        text: '<p>Lorem ipsum dolor sit amet consectetur adipiscing elit nec, proin morbi sagittis dapibus imperdiet mattis habitasse, suspendisse etiam curabitur nam cum commodo tincidunt.</p>'
+        url: '#'
+
+news_agenda_items_compact:
+  -
+    "include()":
+      pattern: "molecules-news-agenda-compact-item"
+      with:
+        title: Faker.words(6, true)
+        date: '8 juni 2018'
+        url: '#'
+  -
+    "include()":
+      pattern: "molecules-news-agenda-compact-item"
+      with:
+        title: Faker.words(6, true)
+        date: '8 juni 2018'
+        url: '#'
+  -
+    "include()":
+      pattern: "molecules-news-agenda-compact-item"
+      with:
+        title: Faker.words(6, true)
+        date: '8 juni 2018'
+        url: '#'

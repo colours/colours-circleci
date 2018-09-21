@@ -1,0 +1,31 @@
+{#
+/**
+ * @file
+ * text-column
+ *
+ * Available variables for text-column:
+ *    - text_column.intro_text [String]: Introduciton text that is shown lager.
+ *    - text_column.text [String]: Main text column
+ *    - text_column.call_to_action_text [String]: Call to action button text
+ *    - text_column.call_to_action_url [String]: Call to action url
+ */
+#}
+
+<div class="text-column">
+{% if text_column.intro_text %}
+  <div class="text-column__intro text--intro">
+    {{ text_column.intro_text|raw }}
+  </div>
+  {% endif %}
+  <div class="text-column__main">
+    {{ text_column.text|raw }}
+    {% set button = {
+      button_element: 'a',
+      button_color: 'secondary',
+      button_other_classes: 'icon icon--after icon--download text-uppercase',
+      button_text: text_column.call_to_action_text,
+      button_link: text_column.call_to_action_url,
+    } %}
+    {% include "@atoms/button/_button.twig" with button %}
+  </div>
+</div>

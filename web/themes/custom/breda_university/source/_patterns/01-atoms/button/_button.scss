@@ -1,0 +1,156 @@
+@import '../../00-protons/variables';
+$btn-focus-width: 0;
+// To change default bootstrap card variables,
+// copy from ~bootstrap/scss/variables to here
+@import "~bootstrap/scss/mixins/buttons";
+@import "~bootstrap/scss/buttons";
+
+$button-icon-space-left: $spacer * 3;
+$button-icon-space-right: $spacer * 3;
+
+// Add custom code here
+.btn.icon--before {
+    position: relative;
+    padding-left: $button-icon-space-left;
+
+    &::before {
+        @include center(false, true, true);
+        left: $spacer;
+    }
+}
+
+.btn.icon--after {
+    position: relative;
+    padding-right: $button-icon-space-right;
+
+    &::before {
+        @include center(false, true, true);
+        right: $spacer;
+    }
+}
+
+input[type="submit"], .form-submit {
+    @include button-variant($bu-indigo, $bu-indigo);
+    border-width: 0;
+}
+
+input[type="submit"],
+.form-submit,
+a.btn,
+button.btn {
+    position: relative;
+    padding: $spacer * 0.8;
+    font-size: $font-size-xs;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    white-space: normal;
+    text-align: left;
+    font-weight: $font-weight-bold;
+
+    &:focus {
+        box-shadow: none;
+    }
+}
+
+.contact-form {
+    input[type="submit"] {
+        padding-right: $spacer * 3;
+        background: $bu-indigo url('../icon/svg/long-arrow.svg') no-repeat calc(100% - 20px) 50%;
+        background-size: 26px 16px;
+    }
+}
+
+.btn-primary {
+    border-color: $bu-indigo;
+    color: white;
+
+    &:hover {
+        border-color: white;
+        background-color: $bu-indigo;
+    }
+}
+
+.btn.btn-secondary,
+.btn-secondary {
+    border-color: $bu-indigo;
+    color: $bu-indigo;
+
+    &:hover {
+        border-color: $bu-indigo;
+        color: $bu-indigo;
+        background-color: #ececec;
+    }
+}
+
+.btn-bu-anti-flash-white {
+    border-color: $bu-indigo;
+    color: $bu-indigo;
+
+    &:hover {
+        border-color: $bu-indigo;
+        color: $bu-indigo;
+        background-color: $bu-anti-flash-white;
+    }
+}
+
+.btn-link {
+    padding: 0;
+}
+
+.bg-bu-indigo {
+    .btn-link {
+        color: white;
+        text-decoration: underline;
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
+}
+
+.ckeditor-accordion-toggler svg,
+.tab-link svg,
+.btn svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.btn span,
+.tab-link span {
+    pointer-events: none;
+}
+
+.tab-link,
+.btn {
+    circle {
+        transform: translateZ(0);
+        backface-visibility: hidden;
+        fill: rgba(255, 255, 255, 0.3);
+    }
+}
+
+.ckeditor-accordion-toggler,
+.navbar-toggler,
+.search-toggler,
+.tab-link,
+.btn-secondary,
+.btn-light {
+    circle,
+    rect {
+        fill: rgba($bu-indigo, 0.3);
+    }
+}
+
+.ckeditor-accordion-toggler,
+.tab-link,
+.btn {
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}

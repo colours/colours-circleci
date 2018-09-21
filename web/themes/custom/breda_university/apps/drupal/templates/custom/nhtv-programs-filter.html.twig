@@ -1,0 +1,13 @@
+{{ attach_library('nhtv_programs/nhtv_programs') }}
+<form id="program-filter-form" method="get" action="">
+  {% for key, group in groups %}
+    <div class="form-wrapper">
+      {% for index, item in group %}
+        <div class="js-form-item form-item">
+          <label class="container-checkbox" for="filter-{{ item|clean_class }}">{{ item }}<input class="program-filter-checkbox" name="checkbox_{{ item|clean_class }}" type="checkbox" id="filter-{{ item|clean_id }}"  data-attr-filter-by="{{ key }}"><span class="checkmark"></span></label>
+        </div>
+      {% endfor %}
+    </div>
+  {% endfor %}
+  <input type="hidden" name="filter" value="">
+</form>

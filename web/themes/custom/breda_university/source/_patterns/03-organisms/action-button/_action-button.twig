@@ -1,0 +1,33 @@
+{#
+/**
+ * @file
+ * action-button
+ *
+ * Available variables for action-button:
+ *    - action_button.title [String]: Introduction text that is shown lager.
+ *    - action_button.text [String]: Main text column
+ *    - action_button.call_to_action_text [String]: Call to action button text
+ *    - action_button.call_to_action_url [String]: Call to action button url
+ *    - action_button.link_items [Array]: Array of Drupal link objects
+ */
+#}
+
+<section class="section module--lg-v action-button">
+    <div class="container">
+        <div class="module module--lg-h module--md-v bg-bu-anti-flash-white">
+            <h2>{{ action_button.title }}</h2>
+            {% include "@molecules/_link-list.twig" with {
+                link_items: action_button.link_items,
+                icon: 'icon icon--before icon--long-arrow icon--blue',
+            } %}
+            {% set button = {
+                button_element: 'a',
+                button_color: 'primary',
+                button_other_classes: 'icon icon--after icon--long-arrow text-uppercase',
+                button_text: action_button.call_to_action_text,
+                button_link: action_button.call_to_action_url,
+            } %}
+            {% include "@atoms/button/_button.twig" with button %}
+        </div>
+    </div>
+</section>

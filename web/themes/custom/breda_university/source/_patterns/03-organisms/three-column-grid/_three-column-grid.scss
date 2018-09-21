@@ -1,0 +1,25 @@
+// All component Sass needs non-printing base config
+@import '../../00-protons/variables';
+
+.three-column-grid {
+    .row--header {
+        position: relative;
+        z-index: 10;
+    }
+
+    .card {
+        height: 100%;
+    }
+
+    &:not(.bg-bu-anti-flash-white) {
+        .card {
+            border-width: 0;
+        }
+
+        .card--white,
+        .card--simple {
+            border-top: 4px solid $bu-indigo;
+        }
+    }
+}
+

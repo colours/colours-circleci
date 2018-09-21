@@ -1,0 +1,24 @@
+{#
+/**
+ * @file
+ * homepage-header
+ *
+ * Available variables for homepage-header:
+ *    - homepage_header.picture.img_element [object]: Fallback image used in the header.
+ *    - homepage_header.picture.sources [object]: Sources for responsive image used in the header.
+ *    - homepage_header.primary_links [Object]: Three cards (card-simple)
+ *    - homepage_header.link_list [Object]: One card (card-link-list)
+ */
+#}
+
+<section class="section homepage-header module">
+    <div class="container module contextual-region">
+        {{ title_prefix }}
+        {{ title_suffix }}
+        {{ homepage_header.picture }}
+        <div class="row no-gutters mr-md-4">
+            {{ homepage_header.primary_links }}
+            {{ homepage_header.link_list }}
+        </div>
+     </div>
+</section>

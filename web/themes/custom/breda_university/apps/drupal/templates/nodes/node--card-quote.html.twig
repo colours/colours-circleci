@@ -1,0 +1,13 @@
+{% set catch_cache = content.field_card_person_photo|render %}
+{% include '@molecules/_card-quote.twig' with {
+    quote_text: content.field_card_quote_text|render|striptags|trim|token_replace,
+    quote_author_image: {
+        src: file_url(content.field_card_person_photo|field_target_entity.field_media_image.entity.uri.value|image_style('quote_default')),
+        alt: content.field_card_person_photo|field_raw('alt'),
+    },
+    quote_author_name: content.field_card_person_name|render|striptags|trim|token_replace,
+    quote_author_role: content.field_card_role|render|striptags|trim|token_replace,
+    quote_author_job_description: content.field_card_job_description|render|striptags|trim|token_replace,
+    quote_author_graduation_year: content.field_card_graduation_year|render|striptags|trim|token_replace,
+    suffix: title_suffix
+} %}

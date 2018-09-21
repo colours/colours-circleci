@@ -1,0 +1,18 @@
+// All component Sass needs non-printing base config
+@import '../../00-protons/variables';
+
+.highlighted-item {
+    time {
+        margin-bottom: $spacer-sm;
+        font-family: $font-family-base;
+        font-size: $font-size-xs;
+        font-weight: $font-weight-bold;
+        color: $bu-cadet;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+
+    .link {
+        font-size: $font-size-xs;
+    }
+}

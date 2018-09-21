@@ -1,0 +1,50 @@
+// All component Sass needs non-printing base config
+@import '../../00-protons/variables';
+
+.two-column-grid {
+    .row--header {
+        position: relative;
+        z-index: 10;
+    }
+
+    .card {
+        height: 100%;
+    }
+
+    .btn {
+        align-self: flex-start;
+    }
+}
+
+@include media-breakpoint-up(md) {
+    .two-column-grid {
+        .col:nth-of-type(4n+1) {
+            .card {
+                margin-left: 50px;
+                width: calc(100% - 50px);
+            }
+
+            .card-body {
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+            }
+        }
+
+        .col:nth-of-type(4n+2) .card {
+            margin-top: 80px;
+            height: calc(100% - 80px);
+        }
+
+        .col:nth-of-type(4n+4) .card {
+            margin-right: 50px;
+            margin-bottom: 80px;
+            width: calc(100% - 50px);
+            height: calc(100% - 80px);
+        }
+
+        .col--cta {
+            margin-bottom: -5.3em;
+        }
+    }
+}

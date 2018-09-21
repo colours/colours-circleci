@@ -1,0 +1,10 @@
+{% include '@organisms/_three-column-grid.twig' with {
+  three_column_grid : {
+    background_color : (content.field_background_colour|render|striptags|trim|lower == 'grey') ? 'bg-bu-anti-flash-white' : '',
+    title:             node.field_display_title.value ? node.field_display_title.value|token_replace : '' ,
+    button_text:       node.field_cta_button.value ? content.field_cta_button[0]['#title']|token_replace : '',
+    button_link:       node.field_cta_button.value ? content.field_cta_button[0]['#url']|render : '',
+    cards:             content.field_referenced_cards
+  },
+  suffix: title_suffix
+} %}

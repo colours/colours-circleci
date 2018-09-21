@@ -1,0 +1,240 @@
+// All component Sass needs non-printing base config
+@import '../../00-protons/variables';
+@import '../../01-atoms/icon/scss/icons-generated';
+@import '../../01-atoms/icon/scss/icon-mixins';
+
+// To change default bootstrap card variables, SEE ~bootstrap/scss/variables
+// Add bootstrap variables here
+$card-border-width: 1px;
+
+@import '~bootstrap/scss/card';
+
+// card variables
+$card-spacer: $spacer * 2.5; // 40
+$card-spacer-sm: $spacer * 1.5; // 30
+$card-title-font-size: 36px;
+
+.border-none {
+    border-style: none;
+}
+
+.card {
+    border-radius: 0;
+}
+
+.card-title {
+    font-family: $font-family-serif;
+    font-size: $card-title-font-size;
+    color: inherit;
+}
+
+.card-category {
+    font-family: $font-family-sans-serif;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-bold;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    color: transparentize($white, 0.3);
+}
+
+.card-body {
+    padding: $card-spacer;
+
+    @include media-breakpoint-up(md) {
+        padding: $card-spacer-sm;
+    }
+}
+
+// card with background image
+.card {
+    overflow: hidden;
+
+    .card-body {
+        z-index: 10;
+    }
+
+    .card-text {
+        margin-bottom: $spacer;
+        font-size: $font-size-sm;
+    }
+
+    .bg-img {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-size: cover;
+        z-index: 5;
+    }
+
+    .btn {
+        margin-top: auto;
+        align-self: flex-start;
+    }
+}
+
+.card--grey--bi {
+    overflow: hidden;
+
+    .card-body {
+        margin-top: $spacer-lg;
+        margin-bottom: $spacer-lg;
+        padding: $card-spacer-sm;
+        max-width: 300px;
+        z-index: 10;
+        background-color: rgba($bu-cadet, 0.8);
+    }
+}
+
+.card--blue--bi {
+    .card-body {
+        background-color: rgba($bu-indigo, 0.8);
+    }
+
+    .bg-img {
+        filter: grayscale(100%) contrast(100%);
+    }
+}
+
+.bg-bu-anti-flash-white .card--grey {
+    border: 1px solid $bu-indigo;
+}
+
+.card--quote {
+    overflow: visible;
+
+    .card-body {
+        padding: $spacer-lg $card-spacer-sm $spacer;
+    }
+
+    blockquote {
+        position: relative;
+        margin-bottom: $spacer-md;
+        font-size: $blockquote-font-size;
+        font-family: $font-family-serif;
+        line-height: 1.2em;
+        color: $bu-cadet;
+
+        &::before {
+            content: "“";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            font-size: 174px;
+            color: $bu-indigo;
+        }
+    }
+
+    .card__footer {
+        display: flex;
+
+        .quote-image {
+            display: block;
+            height: 100px;
+            width: 100px;
+            filter: grayscale(100%);
+        }
+
+        .quote_author_text {
+            margin-bottom: 0;
+            align-self: flex-end;
+            font-size: $font-size-xs;
+        }
+    }
+}
+
+.card--grey,
+.card--white {
+    .card-category {
+        color: $bu-bright-cerulean;
+    }
+}
+
+.card--simple {
+    .card-link {
+        font-family: $font-family-serif;
+        font-size: $card-title-font-size;
+        text-decoration: none;
+        color: $bu-indigo;
+        line-height: 1.2em;
+    }
+
+    .card-link:before {
+        float: right;
+        margin: 3px 0 0 6px;
+        color: $bu-orange;
+    }
+
+    .card-category {
+        color: $bu-bright-cerulean;
+    }
+
+    .card-body {
+        padding: $spacer-lg $spacer-md;
+    }
+
+    .card-text {
+        margin-bottom: 0;
+        font-size: $font-size-sm;
+    }
+
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        li {
+            position: relative;
+            padding-left: $spacer-md;
+            @include icon('check');
+
+            &::before {
+                position: absolute;
+                left: 0;
+                top: 6px;
+                font-size: $font-size-xxs;
+            }
+        }
+
+    }
+}
+
+.card--link-list {
+    .card-body {
+        padding: $spacer-lg $spacer-md;
+    }
+
+    .card-title {
+        font-family: $font-family-serif;
+        font-size: $h3-font-size;
+        line-height: 1.3em;
+    }
+
+    .link-list {
+        margin-bottom: 0;
+
+        .link {
+            display: block;
+            width: 100%;
+            margin: 5px 0;
+            padding-left: $spacer;
+            color: white;
+        }
+    }
+
+    .link::before {
+        top: 3px;
+        transform: none;
+        color: white;
+        font-size: 12px;
+    }
+}
+
+.card--orange {
+    .card-text a,
+    .card-text a:hover {
+        color: $white;
+    }
+}

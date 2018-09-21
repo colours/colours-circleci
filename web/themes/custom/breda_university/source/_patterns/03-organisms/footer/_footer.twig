@@ -1,0 +1,56 @@
+{#
+/**
+ * @file
+ * footer
+ *
+ * Available variables for footer:
+ *    - footer_info_navbar_items [Array]: Drupal Navigation items
+ *    - footer_info_navbar_items [Array]: Drupal Navigation items
+ *    - subscribe_form [HTML]: Drupal form
+ */
+#}
+<footer class="pt-5 px-2 footer bg-bu-indigo text-white" role="contentinfo">
+    {% if not hide_navigation %}
+        <div class="container">
+            <div class="row row-nav">
+                <nav class="mr-auto nav nav--footer col-12 col-md-8" role="navigation">
+                {% block navbar_footer %}
+                    {% include '@molecules/nav/_nav-footer.twig' with {
+                        items: footer_navbar_items,
+                    } %}
+                {% endblock navbar_footer %}
+                </nav>
+                <div class="col-12 col-md-4 col-subscribe-form">
+                    <h3 class='subscribe-title text-uppercase text-bu-bright-cerulean'>{{ "Stay informed"|t }}</h3>
+                    {% block subscribe_form %}
+                        {{ subscribe_form }}
+                    {% endblock subscribe_form %}
+                    <nav class="mr-auto nav nav--footer-info mt-3 col-12" role="navigation">
+                        {% block navbar_service %}
+                            {% include '@molecules/nav/_nav-footer-info.twig' with {
+                                items: footer_info_navbar_items,
+                            } %}
+                        {% endblock navbar_service %}
+                    </nav>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+    <div class="container py-2 mt-5 footer__bottom">
+        <div class="row">
+        <div class="disclaimer col-12 col-md-6">
+            <h3 class="slogan">{{ 'Discover your world'|t }}</h3>
+            <p>&copy; {{ 'Breda University of Applied Sciences'|t }}</p>
+        </div>
+        <div class="social-channels col-12 col-md-6 text-white text-align-right">
+            <ul>
+                <li><a href="https://www.facebook.com/bredauniversityas" target="_blank" class="icon icon--facebook text-white">{{ "Follow us on Facebook"|t }}</a></li>
+                <li><a href="https://www.linkedin.com/school/bredauniversityas/" target="_blank" class="icon icon--linkedin text-white">{{ "Follow us on LinkedIn"|t }}</a></li>
+                <li><a href="https://twitter.com/bredauas" target="_blank" class="icon icon--twitter text-white">{{ "Follow us on Twitter"|t }}</a></li>
+                <li><a href="https://www.youtube.com/BredaUniversityofAppliedSciences" target="_blank" class="icon icon--youtube text-white">{{ "Follow us on YouTube"|t }}</a></li>
+                <li><a href="https://www.instagram.com/bredauniversityas/" target="_blank" class="icon icon--instagram text-white">{{ "Follow us on Instagram"|t }}</a></li>
+            </ul>
+        </div>
+        </div>
+    </div>
+</footer>

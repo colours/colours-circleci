@@ -1,0 +1,99 @@
+name: Breda University
+type: theme
+description: Breda University
+base theme: false
+package: Colours
+core: 8.x
+libraries:
+  - breda_university/core
+  - breda_university/global-styling
+libraries-override:
+  core/jquery: breda_university/jquery
+  ckeditor_accordion/accordion_style:
+    css:
+      theme:
+        css/ckeditor-accordion.css: false
+regions:
+  service_menu: Service menu
+  header: Header
+  content: Content
+  footer: Footer
+  hidden: Hidden
+component-libraries:
+  protons:
+    paths:
+      - ../../source/_patterns/00-protons
+  atoms:
+    paths:
+      - ../../source/_patterns/01-atoms
+      - ../../source/_patterns/01-atoms/grid
+      - ../../source/_patterns/01-atoms/icon
+      - ../../source/_patterns/01-atoms/link
+      - ../../source/_patterns/01-atoms/alert
+      - ../../source/_patterns/01-atoms/badge
+      - ../../source/_patterns/01-atoms/image
+      - ../../source/_patterns/01-atoms/button
+      - ../../source/_patterns/01-atoms/iframe
+      - ../../source/_patterns/01-atoms/picture
+      - ../../source/_patterns/01-atoms/dropdown
+      - ../../source/_patterns/01-atoms/breadcrumb
+      - ../../source/_patterns/01-atoms/list-group
+  molecules:
+    paths:
+      - ../../source/_patterns/02-molecules
+      - ../../source/_patterns/02-molecules/nav
+      - ../../source/_patterns/02-molecules/card
+      - ../../source/_patterns/02-molecules/carousel
+      - ../../source/_patterns/02-molecules/jumbotron
+      - ../../source/_patterns/02-molecules/link-list
+      - ../../source/_patterns/02-molecules/pagination
+      - ../../source/_patterns/02-molecules/search-form
+      - ../../source/_patterns/02-molecules/text-column
+      - ../../source/_patterns/02-molecules/contact-form
+      - ../../source/_patterns/02-molecules/example-widget
+      - ../../source/_patterns/02-molecules/subscribe-form
+      - ../../source/_patterns/02-molecules/highlighted-item
+      - ../../source/_patterns/02-molecules/news-agenda-item
+      - ../../source/_patterns/02-molecules/news-agenda-list
+      - ../../source/_patterns/02-molecules/news-agenda-compact-item
+      - ../../source/_patterns/02-molecules/news-agenda-compact-list
+  organisms:
+    paths:
+      - ../../source/_patterns/03-organisms
+      - ../../source/_patterns/03-organisms/text
+      - ../../source/_patterns/03-organisms/intro
+      - ../../source/_patterns/03-organisms/footer
+      - ../../source/_patterns/03-organisms/header
+      - ../../source/_patterns/03-organisms/navbar
+      - ../../source/_patterns/03-organisms/slider
+      - ../../source/_patterns/03-organisms/article
+      - ../../source/_patterns/03-organisms/accordion
+      - ../../source/_patterns/03-organisms/card-grid
+      - ../../source/_patterns/03-organisms/link-grid
+      - ../../source/_patterns/03-organisms/tab-content
+      - ../../source/_patterns/03-organisms/text-sidebar
+      - ../../source/_patterns/03-organisms/action-button
+      - ../../source/_patterns/03-organisms/header-slider
+      - ../../source/_patterns/03-organisms/search-result
+      - ../../source/_patterns/03-organisms/homepage-header
+      - ../../source/_patterns/03-organisms/text-with-media
+      - ../../source/_patterns/03-organisms/two-column-grid
+      - ../../source/_patterns/03-organisms/program-overview
+      - ../../source/_patterns/03-organisms/three-column-grid
+      - ../../source/_patterns/03-organisms/news-agenda-overview
+      - ../../source/_patterns/03-organisms/program-overview-intro
+  templates:
+    paths:
+      - ../../source/_patterns/04-templates
+      - ../../source/_patterns/04-templates/homepage
+      - ../../source/_patterns/04-templates/user-page
+      - ../../source/_patterns/04-templates/basic-page
+      - ../../source/_patterns/04-templates/news-detail
+      - ../../source/_patterns/04-templates/search-result
+      - ../../source/_patterns/04-templates/training-detail
+      - ../../source/_patterns/04-templates/training-overview
+      - ../../source/_patterns/04-templates/news-agenda-overview
+  pages:
+    paths:
+      - ../../source/_patterns/05-pages
+      - ../../source/_patterns/05-pages/homepage

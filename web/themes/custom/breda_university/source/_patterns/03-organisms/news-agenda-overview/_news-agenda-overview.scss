@@ -1,0 +1,9 @@
+// All component Sass needs non-printing base config
+@import '../../00-protons/variables';
+
+.news-agenda-overview {
+    .sidebar-border h2 {
+        border-top: 4px solid $bu-indigo;
+        padding-top: $spacer-lg;
+    }
+}

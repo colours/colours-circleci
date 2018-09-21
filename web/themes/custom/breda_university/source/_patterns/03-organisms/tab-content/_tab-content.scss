@@ -1,0 +1,62 @@
+// All component Sass needs non-printing base config
+@import '../../00-protons/variables';
+
+.tab-content {
+    @include media-breakpoint-down(md) {
+        .col--tab-nav {
+            border-bottom: 2px solid $bu-silver;
+            margin-bottom: $spacer;
+            padding-bottom: $spacer;
+        }
+    }
+
+    @include media-breakpoint-up(md) {
+        .col--tab-nav {
+            padding-right: $spacer-lg;
+            margin-bottom: 0;
+            border-right: 4px solid $bu-indigo;
+        }
+
+        .col--tab-content {
+            padding-left: $spacer-xxl;
+        }
+    }
+
+    .tab-link {
+        display: block;
+        margin: $spacer-xs 0;
+        padding: $spacer-xs 0 $spacer-xs $spacer;
+        border-left: 4px solid transparent;
+        transition: border-color 0.2s;
+        color: $bu-cadet;
+        text-decoration: none;
+
+        @include media-breakpoint-down(md) {
+            margin: $spacer-xs;
+            padding: $spacer-xs $spacer-xs 0;
+            border-left-width: 0;
+            border-bottom: 4px solid transparent;
+        }
+
+        &:hover {
+            text-decoration: none;
+            border-left-color: $bu-silver;
+            @include media-breakpoint-down(md) {
+                border-bottom-color: $bu-silver;
+            }
+        }
+
+        &.active {
+            border-left-color: $bu-indigo;
+            @include media-breakpoint-down(md) {
+                border-bottom-color: $bu-indigo;
+            }
+        }
+    }
+}
+
+@include media-breakpoint-up(md) {
+    .tab-container {
+        padding: $spacer-md 0;
+    }
+}

@@ -1,0 +1,15 @@
+name: colours-circleci
+recipe: pantheon
+config:
+  framework: drupal8
+  site: colours-circleci
+  id: 5555f228-bd29-4a35-b968-cf12a7a00d0d
+tooling:
+  drupal:
+    cmd:
+      - "/app/vendor/bin/drupal"
+      - "--root=/app/web"
+  drush:
+    cmd:
+      - "/app/vendor/bin/drush"
+      - "--root=/app/web"

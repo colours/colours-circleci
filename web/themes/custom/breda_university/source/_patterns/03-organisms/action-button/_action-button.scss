@@ -1,0 +1,30 @@
+// All component Sass needs non-printing base config
+@import '../../00-protons/variables';
+
+.action-button {
+    .module {
+        position: relative;
+    }
+
+    .btn-primary {
+        position: absolute;
+        top: 0;
+        right: 50px;
+        transform: translateY(-50%);
+        @include media-breakpoint-down(sm) {
+            position: relative;
+            margin-bottom: -$spacer-sm;
+            width: 100%;
+            transform: none;
+            right: auto;
+        }
+    }
+
+    .link-list {
+        margin: $spacer 25% $spacer 0;
+
+        @include media-breakpoint-down(md) {
+            margin: $spacer-sm 0;
+        }
+    }
+}

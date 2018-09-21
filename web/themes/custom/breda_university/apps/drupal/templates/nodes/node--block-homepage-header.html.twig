@@ -1,0 +1,9 @@
+{% include '@organisms/_homepage-header.twig' with {
+    homepage_header : {
+        picture: content.field_block_image,
+        primary_links: content.field_primary_links,
+        link_list: content.field_links_list,
+        suffix: title_suffix
+    }
+} %}
+

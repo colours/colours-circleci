@@ -1,0 +1,8 @@
+{#
+  Card column
+  Uses the card-layout component and add a wrapper for a number of specific columns
+#}
+
+<div class="col col-12 col-md-{{ 12 / columns }} module--sm">
+  {% include '@molecules/card/_card-layout.twig' %}
+</div>

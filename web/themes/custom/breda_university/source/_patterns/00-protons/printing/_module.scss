@@ -1,0 +1,155 @@
+@import '../variables';
+
+$module-spacer-lg: $spacer * 2.5;
+
+// Classes to add padding to container elements
+.module {
+    padding: $spacer;
+}
+
+.col.module--none,
+.module--none {
+    padding: 0;
+}
+
+.col.module--xs,
+.module--xs {
+    padding: $spacer-xs;
+
+    &-v {
+        padding-top: $spacer-xs;
+        padding-bottom: $spacer-xs;
+    }
+
+    &-h {
+        padding-left: $spacer-xs;
+        padding-right: $spacer-xs;
+    }
+}
+
+.col.module--sm,
+.module--sm {
+    padding: $spacer-sm;
+
+    &-v {
+        padding-top: $spacer-sm;
+        padding-bottom: $spacer-sm;
+    }
+
+    &-h {
+        padding-left: $spacer-sm;
+        padding-right: $spacer-sm;
+    }
+}
+
+.col.module--md,
+.module--md {
+    padding: $spacer-md;
+
+    &-v {
+        padding-top: $spacer-md;
+        padding-bottom: $spacer-md;
+    }
+
+    &-h {
+        padding-left: $spacer-md;
+        padding-right: $spacer-md;
+    }
+}
+
+.col.module--lg,
+.module--lg {
+    padding: $spacer-lg;
+
+    &-v {
+        padding-top: $module-spacer-lg;
+        padding-bottom: $module-spacer-lg;
+    }
+
+    &-h {
+        padding-left: $spacer-lg;
+        padding-right: $spacer-lg;
+
+        @include media-breakpoint-down(md) {
+            padding-left: $spacer-md;
+            padding-right: $spacer-md;
+        }
+    }
+}
+
+.col.module--xl,
+.module--xl {
+    padding: $spacer-xl;
+
+    &-v {
+        padding-top: $spacer-xl;
+        padding-bottom: $spacer-xl;
+    }
+
+    &-h {
+        padding-left: $spacer-xl;
+        padding-right: $spacer-xl;
+    }
+}
+
+.col.module--xxl,
+.module--xxl {
+    padding: $spacer-xxl;
+
+    &-v {
+        padding-top: $spacer-xxl;
+        padding-bottom: $spacer-xxl;
+    }
+
+    &-h {
+        padding-left: $spacer-xxl;
+        padding-right: $spacer-xxl;
+    }
+}
+
+.module--pd-sm {
+    margin-bottom: - $spacer-sm;
+}
+
+.module--pd-md {
+    margin-bottom: - $spacer-md;
+}
+
+.module--pd {
+    margin-bottom: - $spacer;
+}
+
+.module--pd-lg {
+    margin-bottom: - $spacer-lg;
+}
+
+.module--pd-xl {
+    margin-bottom: - $spacer-xl;
+}
+
+.module--pd-xxl {
+    margin-bottom: - $spacer-xxl;
+}
+
+section[class*='section--intro']:first-of-type,
+section[class*='program-overview-intro']:first-of-type,
+section[class*='bg-bu-anti-flash-white']:first-of-type {
+    padding-top: 0;
+
+    + .module--xl-v.bg-bu-anti-flash-white {
+        padding-top: 0;
+    }
+}
+
+section[class*='section--intro']:first-of-type + .text.bg-bu-anti-flash-white {
+    margin-top: -$spacer-xl;
+    padding-top: -$spacer-md;
+}
+
+.module--xl-v.bg-bu-anti-flash-white ~ .module--xl-v.bg-bu-anti-flash-white {
+    padding-top: 0;
+}
+
+section:not(.bg-bu-anti-flash-white) + section:not(.bg-bu-anti-flash-white) {
+    padding-top: 0;
+}

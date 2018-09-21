@@ -1,0 +1,8 @@
+// All component Sass needs non-printing base config
+@import '../../00-protons/variables';
+
+.news-agenda-compact-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}

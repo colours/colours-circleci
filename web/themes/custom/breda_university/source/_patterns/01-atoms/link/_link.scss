@@ -1,0 +1,11 @@
+// All component Sass needs non-printing base config
+@import '../../00-protons/variables';
+
+.link--underline {
+    text-decoration: underline;
+    text-transform: uppercase;
+
+    &:hover {
+        text-decoration: none;
+    }
+}

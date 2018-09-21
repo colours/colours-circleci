@@ -1,0 +1,9 @@
+{% include '@organisms/_text-sidebar.twig' with {
+  text_column: {
+    intro_text: content.field_intro_text|field_value,
+    text: content.field_text|field_value,
+    call_to_action_text: node.field_cta_button.value ? content.field_cta_button[0]['#title'] : '',
+    call_to_action_url: node.field_cta_button.value ? content.field_cta_button[0]['#url']|render : ''
+  },
+  richtext_sidebar_card:  content.field_static_card|field_value,
+} %}

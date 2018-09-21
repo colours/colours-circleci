@@ -1,0 +1,22 @@
+{#
+/**
+ * @file
+ * news-detail
+ *
+ * Available variables for news-detail:
+ *    - news_detail.variable_name [variable_type]: Description of the variable. Example below.
+ *    - news_detail.invert [bool]: When set, colors will be inverted for light display on dark background.
+ */
+#}
+
+<div class="news-detail">
+    {% include '@atoms/breadcrumb/_breadcrumb.twig' %}
+    {% include '@organisms/_text.twig' %}
+    {% include '@organisms/_text.twig' with {
+        text: {
+            title_left: true,
+            title_left: true,
+            background_color: '',
+        }
+    } %}
+</div>

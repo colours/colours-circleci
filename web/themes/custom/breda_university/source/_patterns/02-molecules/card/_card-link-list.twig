@@ -1,0 +1,24 @@
+{#
+  Blue Card!
+#}
+
+{% extends '@molecules/card/_card.twig' %}
+{% set text_color = 'white' %}
+{% set card_background = 'bu-indigo' %}
+{% set card_other_classes = 'card--link-list' %}
+
+{% block card_body %}
+    <div class="{{ body_class }}">
+        {% if card_category %}
+            <h4>{{ card_category }}</h4>
+        {% endif %}
+        {% if card_title %}
+            <{{ card_title_element|default('h3') }} class="card-title">{{ card_title }}</{{ card_title_element|default('h3') }}>
+        {% endif %}
+        {% if card_link_items %}
+            <div class="link-list">
+                {{ card_link_items }}  
+            </div>          
+        {% endif %}
+    </div>
+{% endblock %}

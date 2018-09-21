@@ -1,0 +1,41 @@
+{#
+/**
+ * @file
+ * action-button
+ *
+ * Available variables for action-button:
+ *    - link_grid.title [String]: Introduction text that is shown lager.
+ *    - link_grid.text [String]: Main text column
+ *    - link_grid.button_text [String]: Call to action button text
+ *    - link_grid.button_link [String]: Call to action button link
+ *    - link_grid.link_items [Array]: Array of Drupal link objects
+ */
+#}
+
+<section class="section module--lg-v link-grid">
+    <div class="container">
+        <div class="row no-gutters justify-content-between">
+            <div class="col-md-5 pb-2 pl-5">
+                <h2 class="h1">{{ link_grid.title }}</h2>
+            </div>
+            <div class="col-md-4"></div>
+            <div class="col-md-3 pb-4 align-self-end text-right">
+                {% set button = {
+                    button_element: 'a',
+                    button_outline: 'primary',
+                    button_other_classes: 'btn-light btn--read-more text-uppercase',
+                    button_text: link_grid.button_text,
+                    button_link: link_grid.button_link,
+                } %}
+                {% include "@atoms/button/_button.twig" with button %}
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        {% include "@molecules/_link-list.twig" with {
+            link_items: link_grid.link_items,
+            button: 'btn btn-outline-primary',
+            icon: '',
+        } %}
+    </div>
+</section>

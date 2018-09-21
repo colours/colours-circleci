@@ -1,0 +1,24 @@
+{#
+  Simple Card!
+#}
+
+{% extends '@molecules/card/_card.twig' %}
+{% set text_color = 'bu-cadet' %}
+{% set card_background = 'white' %}
+{% set card_other_classes = 'card--simple' %}
+{% set button_color = 'secondary' %}
+{% set button_outline = 'primary' %}
+
+{% block card_body %}
+    <div class="{{ body_class }}">
+        {% if card_category %}
+        <h4>{{ card_category }}</h4>
+        {% endif %}
+        {% if card_link %}
+            <h3><a href="{{ card_link }}" class="card-link icon icon--long-arrow">{{ card_link_text }}</a></h3>
+        {% endif %}
+        {% if card_text %}
+            <p class="card-text {{ text_color }}">{{ card_text }}</p>
+        {% endif %}
+    </div>
+{% endblock %}

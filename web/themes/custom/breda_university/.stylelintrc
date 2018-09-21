@@ -1,0 +1,28 @@
+{
+  "plugins": [
+    "stylelint-scss",
+  ],
+  "ignoreFiles": [
+    "apps/pl/pattern-lab/**/*",
+    "./node_modules/**/*",
+    "source/_patterns/01-atoms/icon/scss/_icons-generated.scss"
+  ],
+  "rules": {
+    "max-empty-lines": 1,
+    "declaration-colon-space-after": "always",
+    "declaration-no-important": true,
+    "indentation": 4,
+    "max-nesting-depth": 3,
+    "selector-max-specificity": "1,4,3",
+    "selector-max-id": 1,
+    "scss/selector-no-redundant-nesting-selector": true,
+    "at-rule-no-vendor-prefix": true,
+    "media-feature-name-no-vendor-prefix": true,
+    "property-no-vendor-prefix": true,
+    "selector-no-vendor-prefix": true,
+    "value-no-vendor-prefix": true,
+    "rule-empty-line-before": ["always", {
+      except: ["first-nested","after-single-line-comment"]
+    }],
+  }
+}

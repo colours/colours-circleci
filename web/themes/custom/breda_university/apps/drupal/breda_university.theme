@@ -1,0 +1,353 @@
+<?php
+
+use \Drupal\views\Views;
+use \Drupal\Core\Form\FormState;
+use \Drupal\Core\URL;
+
+/**
+ * @file
+ * Functions to support theming in the breda_university theme.
+ */
+
+/**
+ * Implements hook_preprocess_HOOK() for html.html.twig.
+ */
+function breda_university_preprocess_html(array &$variables) {
+  /* Add class to html tag */
+  //$variables['html_attributes']->addClass('no-js');
+
+  // Don't display the site name twice on the front page (and potentially others)
+  /*if (isset($variables['head_title_array']['title']) && isset($variables['head_title_array']['name']) && ($variables['head_title_array']['title'] == $variables['head_title_array']['name'])) {
+    $variables['head_title'] = $variables['head_title_array']['name'];
+  }*/
+}
+
+/**
+ * Implements hook_page_attachments_alter().
+ */
+function breda_university_page_attachments_alter(array &$page) {
+  // Tell IE to use latest rendering engine (not to use compatibility mode).
+  /*$ie_edge = [
+    '#type' => 'html_tag',
+    '#tag' => 'meta',
+    '#attributes' => [
+    'http-equiv' => 'X-UA-Compatible',
+    'content' => 'IE=edge',
+    ],
+  ];
+  $page['#attached']['html_head'][] = [$ie_edge, 'ie_edge'];*/
+}
+
+/**
+ * Implements hook_theme_suggestions_menu_alter().
+ */
+function breda_university_theme_suggestions_menu_alter(&$suggestions, $variables, $hook) {
+  if(isset($variables['menu_name']) && ($variables['menu_name'] === 'service' || $variables['menu_name'] === 'service-en')){
+    if (isset($variables['attributes']['block']) &&
+      ($variables['attributes']['block'] === 'block-servicemenu-2nd' || $variables['attributes']['block'] ==='block-serviceen-2nd')) {
+      //use main menu template for second level block
+      $suggestions[] = 'menu__main';
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_page() for page.html.twig.
+ */
+function breda_university_preprocess_page(array &$variables) {
+  $view = Views::getView('search_results');
+  $view->setDisplay('search_page');
+  $view->initHandlers();
+  $form_state = (new FormState())
+    ->setStorage([
+      'view' => $view,
+      'display' => &$view->display_handler->display,
+      'rerender' => TRUE,
+    ])
+    ->setMethod('get')
+    ->setAlwaysProcess()
+    ->disableRedirect();
+  $form_state->set('rerender', NULL);
+  $form = [];
+  try{
+    $form = \Drupal::formBuilder()->buildForm('\Drupal\views\Form\ViewsExposedForm', $form_state);
+  }catch (Exception $exception){
+    watchdog_exception('nhtv_theme_prepocess', $exception);
+  }
+  $variables['search_form'] = $form;
+}
+
+/**
+ * Implements hook_theme_suggestions_page_alter().
+ */
+function breda_university_theme_suggestions_page_alter(array &$suggestions, array $variables) {
+
+}
+
+/**
+ * Implements hook_theme_suggestions_node_alter().
+ */
+function breda_university_theme_suggestions_node_alter(array &$suggestions, array $variables) {
+
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for Block document templates.
+ */
+function breda_university_preprocess_block(array &$variables) {
+  if ($variables['plugin_id'] == 'language_block:language_interface') {
+    foreach ($variables['content']['#links'] as $key => $value) {
+      $variables['content']['#links'][$key]['title'] = $key;
+    }
+  }
+  $variables['content']['#attributes']['block'] = $variables['attributes']['id'];
+}
+
+/**
+ * Implements hook_preprocess_breadcrumb().
+ */
+function breda_university_preprocess_breadcrumb(&$variables) {
+  $token_service = \Drupal::token();
+  foreach ($variables['breadcrumb'] as $i => $crumb){
+    $variables['breadcrumb'][$i]['text'] = $token_service->replace($crumb['text']);
+  }
+}
+
+/**
+ * Implements hook_preprocess_block().
+ */
+function particle_preprocess_block__system_branding_block(array &$variables) {
+  $logo_default = theme_get_setting('logo.use_default');
+  $logo_url = theme_get_setting('logo.url');
+
+  // Set the logo to PL if default.
+  if ($logo_default) {
+    $variables['logo_svg_inline'] = '@atoms/image/logo.svg';
+    // Send to img if Logo is not an default.
+  }
+  else {
+    $variables['logo_img_src'] = $logo_url;
+  }
+}
+
+/**
+ * Implements hook_preprocess_breadcrumb().
+ */
+function particle_preprocess_breadcrumb(&$variables) {
+  if (($node = \Drupal::routeMatch()
+      ->getParameter('node')) && $variables['breadcrumb']) {
+    $variables['breadcrumb'][] = [
+      'text' => $node->getTitle(),
+    ];
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_field_alter().
+ */
+function breda_university_theme_suggestions_field_alter(array &$suggestions, array $variables) {
+  /*$element = $variables['element'];
+  $suggestions[] = 'field__' . $element['#view_mode'];
+  $suggestions[] = 'field__' . $element['#view_mode'] . '__' . $element['#field_name'];*/
+}
+
+/**
+ * Implements hook_theme_suggestions_field_alter().
+ */
+function breda_university_theme_suggestions_fieldset_alter(array &$suggestions, array $variables) {
+  /*$element = $variables['element'];
+  if (isset($element['#attributes']['class']) && in_array('form-composite', $element['#attributes']['class'])) {
+    $suggestions[] = 'fieldset__form_composite';
+  }*/
+}
+
+/**
+ * Implements hook_preprocess_node().
+ */
+function breda_university_preprocess_node(array &$variables) {
+  /* @var $node \Drupal\node\Entity\Node */
+  $node = $variables['elements']['#node'];
+  $token_service = \Drupal::token();
+  switch($node->bundle()){
+    case 'block_action_button':
+    case 'block_links_grid':
+      $links = $node->get('field_link_items')->getValue();
+      foreach($links as $i => $link){
+        if(!empty($link['title'])){
+          $links[$i]['title'] = htmlspecialchars_decode($token_service->replace($link['title']));
+        }
+      }
+      $variables['link_items'] = $links;
+    break;
+    case 'block_text_with_media':
+      $entities = $node->get('field_media')->referencedEntities();
+      if(!empty($entities)){
+        /* @var \Drupal\media\Entity\Media $media*/
+        $media = array_shift($entities);
+        $type = $media->bundle();
+        if($type === 'image'){
+          $image = $node->field_media->view([
+            'type' => 'responsive_media',
+            'label' => 'hidden',
+            'settings' => array(
+              'responsive_image_style' => 'image_and_text_responsive',
+            ),
+          ]);
+          $variables['content']['field_media'] = $image;
+      }
+      }
+      break;
+    case 'card_content':
+      // Replace the token for subject.
+      //set CTA button variables
+      $cta_type = $node->field_card_cta_type->value;
+      $variables['button'] = [];
+      if($cta_type === 'file'){
+        if (!$node->get('field_card_file')->isEmpty() && $node->get('field_card_file')->entity){
+          $uri = $node->get('field_card_file')->entity->get('field_media_file')->entity->uri->value;
+          $variables['button'] = [
+            'button_link' => file_create_url($uri),
+            'button_text' => $token_service->replace($node->field_card_file_label->value)
+          ];
+        }
+      }elseif($cta_type === 'link'){
+        $button = $node->get('field_card_button');
+        if (!$button->isEmpty()){
+          $variables['button'] = [
+            'button_link' => Url::fromUri($button->uri)->toString(),
+            'button_text' => $token_service->replace($button->title)
+          ];
+        }
+      }
+      break;
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_views_view_alter().
+ */
+function breda_university_theme_suggestions_views_view_alter(array &$suggestions, array $variables) {
+
+}
+
+/**
+ * Implements hook_preprocess_views_view().
+ */
+function breda_university_preprocess_views_view(array &$variables){
+  $id = $variables['id'];
+  $display_id = $variables['display_id'];
+  if($id === 'search_results' && $display_id === 'search_page'){
+    $search_text = \Drupal::request()->query->get('text');
+    $variables['search_text'] = (!empty($search_text)) ? $search_text : '';
+    $variables['filter_checked'] = [];
+    $filter_checked = \Drupal::request()->query->get('type');
+    if(!empty($filter_checked)){
+      foreach($filter_checked as $checked){
+        $variables['filter_checked'][$checked] = TRUE;
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_form().
+ */
+function breda_university_preprocess_form(array &$variables) {
+  //$variables['attributes']['novalidate'] = 'novalidate';
+}
+
+/**
+ * Implements hook_preprocess_select().
+ */
+function breda_university_preprocess_select(array &$variables) {
+  //$variables['attributes']['class'][] = 'select-chosen';
+}
+
+/**
+ * Implements hook_preprocess_field().
+ */
+function breda_university_preprocess_field(array &$variables, $hook) {
+  /*switch ($variables['element']['#field_name']) {
+  }*/
+}
+
+/**
+ * Implements hook_preprocess_details().
+ */
+function breda_university_preprocess_details(array &$variables) {
+  /*$variables['attributes']['class'][] = 'details';
+  $variables['summary_attributes']['class'] = 'summary';*/
+}
+
+/**
+ * Implements hook_theme_suggestions_details_alter().
+ */
+function breda_university_theme_suggestions_details_alter(array &$suggestions, array $variables) {
+
+}
+
+/**
+ * Implements hook_preprocess_menu_local_task().
+ */
+function breda_university_preprocess_menu_local_task(array &$variables) {
+  //$variables['element']['#link']['url']->setOption('attributes', ['class'=>'rounded']);
+}
+
+/**
+ * Implements template_preprocess_paragraph().
+ *
+ * @param array $variables
+ *   An associative array containing:
+ *   - elements: An array of elements to display in view mode.
+ *   - paragraph: The paragraph object.
+ *   - view_mode: View mode; e.g., 'full', 'teaser'...
+ */
+function breda_university_preprocess_paragraph(&$variables) {
+  /** @var \Drupal\paragraphs\Entity\Paragraph $paragraph */
+  $paragraph = $variables['paragraph'];
+  // Get the parent entity.
+  $parentEntity = $paragraph->getParentEntity();
+  if($parentEntity->getEntityTypeId() ===  'node' && $parentEntity->bundle() === 'block_tab_content'){
+    $variables['is_first'] = FALSE;
+    $fieldTabs = $parentEntity->get('field_tabs')->getValue();
+    $firstTab = array_shift($fieldTabs);
+    if($firstTab['target_id'] === $paragraph->id()){
+      $variables['is_first'] = TRUE;
+    }
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_container_alter().
+ */
+function breda_university_theme_suggestions_container_alter(array &$suggestions, array $variables) {
+  if(!empty($variables['element']['#type']) && $variables['element']['#type'] === 'view'){
+    $pieces = [
+      $variables['element']['#type'],
+      $variables['element']['#name'],
+      $variables['element']['#display_id'],
+    ];
+    $suggestions[] = 'container__' . implode('_', $pieces);
+  }
+}
+
+
+function breda_university_preprocess_menu(&$variables, $hook) {
+  if ($hook == 'menu__service' || $hook == 'menu__service_en') {
+    breda_university_menu_active_item($variables['items']);
+  }
+}
+
+function breda_university_menu_active_item(&$items) {
+  $current_path = \Drupal::request()->getRequestUri();
+  foreach ($items as $key => $item) {
+    // if path is current path, set active to li
+    if ($item['url']->toString() == $current_path && $item['in_active_trail'] === FALSE) {
+      // add active link
+      $items[$key]['in_active_trail'] = TRUE;
+    }
+    if (!empty($items[$key]['below'])) {
+      breda_university_menu_active_item($items[$key]['below']);
+    }
+  }
+}

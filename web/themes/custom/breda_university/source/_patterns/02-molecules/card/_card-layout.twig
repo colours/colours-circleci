@@ -1,0 +1,64 @@
+{#
+  Possible layouts:
+  card--orange
+  card--white
+  card--grey
+  card--blue
+  card--grey--bi
+  card--blue--bi
+#}
+
+{% set _card_layout = layout %}
+
+{% if _card_layout == 'card--orange' %}
+    {% set _text_color = 'white' %}
+    {% set _card_background = 'bu-orange' %}
+    {% set _button_color = 'light' %}
+    {% set _button_other_classes = 'icon icon--after icon--long-arrow text-uppercase' %}
+{% elseif _card_layout == 'card--white' %}
+    {% set _button_color = 'secondary' %}
+    {% set _button_other_classes = 'icon icon--after icon--long-arrow text-uppercase' %}
+{% elseif _card_layout == 'card--grey' %}
+    {% set _text_color = 'white' %}
+    {% set _text_color = 'bu-indigo' %}
+    {% set _card_background = 'bu-anti-flash-white' %}
+    {% set _button_color = 'secondary' %}
+    {% set _button_outline = 'secondary' %}
+    {% set _button_other_classes = 'icon icon--after icon--long-arrow text-uppercase' %}
+{% elseif _card_layout == 'card--blue' %}
+    {% set _text_color = 'white' %}
+    {% set _card_background = 'bu-indigo' %}
+    {% set _button_color = 'light' %}
+    {% set _button_outline = 'light' %}
+    {% set _button_other_classes = 'text-uppercase' %}
+{% elseif _card_layout == 'card--grey--bi' %}
+    {% set _text_color = 'white' %}
+    {% set _card_background = 'bu-cadet' %}
+    {% set _button_color = 'bu-orange' %}
+    {% set _card_image_location = 'bottom' %}
+    {% set _card_image = card_image %}
+    {% set _button_other_classes = 'icon icon--after icon--long-arrow text-uppercase' %}
+{% elseif _card_layout == 'card--blue--bi' %}
+    {% set _text_color = 'white' %}
+    {% set _card_background = 'bu-indigo' %}
+    {% set _button_color = 'light' %}
+    {% set _button_outline = 'light' %}
+    {% set _card_image_location = 'bottom' %}
+    {% set _card_image = card_image %}
+    {% set _button_other_classes = 'text-uppercase' %}
+{% endif %}
+
+{% include '@molecules/card/_card.twig' with {
+    card_border : 'none',
+    card_border: 'none',
+    text_color: _text_color,
+    card_background: _card_background,
+    card_other_classes: _card_layout,
+    button_element: 'a',
+    button_color: _button_color,
+    button_outline: _button_outline,
+    button_other_classes: _button_other_classes,
+    card_image_location: _card_image_location,
+    card_image: _card_image,
+    bg: true
+} %}

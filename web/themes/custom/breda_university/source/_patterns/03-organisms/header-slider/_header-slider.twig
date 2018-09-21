@@ -1,0 +1,39 @@
+{#
+/**
+ * @file
+ * header-slider
+ *
+ * Available variables for header-slider:
+ *    - header_slider.picture [object]: Fallback image used in the header.
+ *    - header_slider.title [String]: title in the header
+ *    - header_slider.card_title_element [String]: heading type in the header, default h1
+ *    - header_slider.intro_text [String/HTML]: Intro text of the header
+ *    - header_slider.button_text [String]: Button text
+ *    - header_slider.button_link [String]: Button link
+ */
+#}
+
+<section class="section module--xxl-v header-slider bg-bu-anti-flash-white">
+    <div class="container contextual-region">
+        {{ title_prefix }}
+        {{ title_suffix }}
+
+        {{ header_slider.image }}
+
+        {% if header_slider.title %}
+            {% include '@molecules/_card.twig' with {
+                card_title : header_slider.title,
+                card_text: header_slider.intro_text,
+                card_border: 'none',
+                card_title_element: header_slider.heading_type | default('h1'),
+                button: {
+                    button_text: header_slider.button_text,
+                    button_link: header_slider.button_link,
+                    button_element: 'a',
+                    button_color: 'bu-orange',
+                    button_other_classes: 'icon icon--after icon--arrow-down text-uppercase',
+                }
+            } %}
+        {% endif %}
+    </div>
+</section>

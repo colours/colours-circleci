@@ -1,0 +1,25 @@
+name: bredauniversity-patternlab
+
+proxy:
+  nodeserver:
+    - pl.bredauniversity.lndo.site:1981
+ 
+services:
+  nodeserver:
+    type: node:8.4
+    overrides:
+      services:
+        image: weareyou/node-php-composer
+        ports:
+          - "1981:1981"        
+#    run_as_root:
+#      - "npm install -g gulp-cli -y"      
+    run:
+      - "cd $LANDO_MOUNT && npm start"
+tooling:
+  npm:
+    service: nodeserver
+
+events:
+  post-start:
+    - nodeserver: cd $LANDO_MOUNT && npm install && npm run setup

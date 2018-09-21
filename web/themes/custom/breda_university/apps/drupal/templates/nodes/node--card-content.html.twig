@@ -1,0 +1,9 @@
+{% set catch_cache = content.field_card_layout|render %}
+{% include '@molecules/_card-layout.twig' with {
+  card_title: content.field_card_title|field_value|render|token_replace,
+  card_category: content.field_card_category|field_target_entity.name.value,
+  card_text: content.field_card_text|field_value,
+  layout: content.field_card_layout|field_target_entity.description.value,
+  card_image: file_url(content.field_card_bg_img|field_target_entity.field_media_image.entity.uri.value|image_style('blue_block_default')),
+  suffix: title_suffix
+} %}

@@ -1,0 +1,14 @@
+<form method="get" action="">
+    <div class="form-wrapper">
+        <div class="js-form-item form-item">
+            <label class="container-checkbox" for="field_all">{{ 'All'|t }}<input name="" value="" id="field_all" type="checkbox"><span class="checkmark"></span></label>
+        </div>
+        <div class="js-form-item form-item">
+            <label class="container-checkbox" for="page_training_detail">{{ 'Programmes'|t }}<input id="page_training_detail" name="type[]" value="page_training_detail" type="checkbox" class="filter-option" {% if checked.page_training_detail %}checked{% endif %}><span class="checkmark"></span></label>
+        </div>
+        <div class="js-form-item form-item">
+            <label class="container-checkbox" for="page_news_agenda_item">{{ 'News &amp; Agenda'|t|raw }}<input id="page_news_agenda_item" name="type[]" value="page_news_agenda_item" type="checkbox" class="filter-option" {% if checked.page_news_agenda_item %}checked{% endif %}><span class="checkmark"></span></label>
+        </div>
+        <input type="hidden" name="text" value="">
+    </div>
+</form>

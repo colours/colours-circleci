@@ -1,0 +1,7 @@
+<div class="col col-12 col-md-6 col-lg-3">
+    {% include '@molecules/_card-link-list.twig' with {
+        card_title:      paragraph.field_links_list_title.value ? paragraph.field_links_list_title.value|token_replace : '',
+        card_link_items: content.field_link_list_item
+    } %}
+</div>
+

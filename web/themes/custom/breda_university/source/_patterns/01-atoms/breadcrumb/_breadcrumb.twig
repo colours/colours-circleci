@@ -1,0 +1,28 @@
+{#
+  Breadcrumb!
+
+  breadcrumb_items: Array: A list of breadcrumbs to render.
+  breadcrumb_title: String: The title of the breadcrumb
+  breadcrumb_link: String: The URL of the breadcrumb
+
+  see https://www.w3.org/TR/wai-aria-practices/#breadcrumb
+
+  see https://getbootstrap.com/docs/4.0/components/breadcrumb/ for more details
+#}
+<div class="bg-bu-anti-flash-white">
+    <div class="container container--md module--md-h">
+        <nav aria-label="breadcrumb" role="navigation">
+            <ol class="breadcrumb">
+                {% for item in breadcrumb %}
+                    {% if loop.last %}
+                        <li class="breadcrumb-item active is-active" aria-current="page">{{ item.text | raw }}</li>
+                    {% else %}
+                        <li class="breadcrumb-item">
+                            <a href="{{ (pl) ? '#' : item.url }}">{{ item.text | raw }}</a>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+            </ol>
+        </nav>
+    </div>
+</div>

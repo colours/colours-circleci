@@ -1,0 +1,66 @@
+@import '../variables';
+// Bootstrap override variables go here.
+// See available vars in ~bootstrap/scss/_variables.scss, i.e.
+//$input-bg
+//$form-text-margin-top
+@import '~bootstrap/scss/forms';
+
+// Custom forms rules go here
+.contact-form,
+.webform-submission-form {
+    form[class*='-form'] {
+        max-width: 680px;
+    }
+
+    .form-item {
+        margin-bottom: $spacer-md;
+    }
+
+    label {
+        font-family: $font-family-sans-serif;
+        font-size: $font-size-xs;
+        line-height: 18px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        font-weight: $font-weight-bold;
+        color: $bu-cadet;
+
+        &.form-required:after {
+            content: ' *';
+        }
+    }
+
+    .form-textarea,
+    .form-search,
+    .form-phone,
+    .form-email,
+    .form-text {
+        display: block;
+        width: 100%;
+        padding: 15px 20px;
+        border-width: 0;
+        color: $bu-cadet;
+        background-color: $bu-anti-flash-white;
+
+        &:invalid {
+            background-color: $bu-invalid;
+        }
+
+        &::placeholder {
+            color: $bu-manatee;
+        }
+    }
+
+    .js-form-type-checkbox {
+        margin-bottom: 0;
+    }
+
+    .js-form-type-checkbox:last-of-type {
+        margin-bottom: $spacer-sm;
+    }
+
+    .form-actions {
+        text-align: right;
+    }
+
+}

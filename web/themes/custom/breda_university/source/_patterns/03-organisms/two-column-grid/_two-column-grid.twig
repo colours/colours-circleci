@@ -1,0 +1,46 @@
+{#
+/**
+ * @file
+ * two-column-grid
+ *
+ * Available variables for two-column-grid:
+ *    - two_column_grid.title [String]: Introduction text that is shown lager.
+ *    - two_column_grid.background_color [String]: Introduction text that is shown lager.
+ *    - two_column_grid.call_to_action_text [String]: Call to action button text
+ *    - two_column_grid.call_to_action_url [String]: Call to action button url
+ *    - two_column_grid.cards [Array]: Array of cards
+ *    - card.title [string]: title
+ *    - card.text [string]: string
+ *    - card.layout [string]: string
+ *    - card.image [string]: image url
+ */
+#}
+
+<section class="section two-column-grid module--lg-v {{ two_column_grid.background_color|default('bg-bu-white') }} contextual-region">
+    {{ suffix }}
+    <div class="container">
+        {% if two_column_grid.title or two_column_grid.button_link %}
+        <div class="row no-gutters justify-content-between row--header">
+            <div class="col-md-5 pb-4">
+                {% if two_column_grid.title %}
+                <h2 class="mb-0">{{ two_column_grid.title}}</h2>
+                {% endif %}
+            </div>
+            <div class="col-md-3"></div>
+            <div class="col-md-4 pb-4 align-self-end text-right col--cta">
+            {% set button = {
+                button_element: 'a',
+                button_color: 'bu-anti-flash-white',
+                button_other_classes: 'text-uppercase',
+                button_text: two_column_grid.button_text,
+                button_link: two_column_grid.button_link,
+            } %}
+                {% include "@atoms/button/_button.twig" with button %}
+            </div>
+        </div>
+        {% endif %}
+        <div class="row justify-content-start">
+            {{ two_column_grid.cards }}
+        </div>
+    </div>
+</section>

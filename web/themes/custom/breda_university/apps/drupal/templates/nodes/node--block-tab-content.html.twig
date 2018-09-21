@@ -1,0 +1,6 @@
+{% include '@organisms/_tab-content.twig' with {
+  tab_content_title: node.field_display_title.value ? node.field_display_title.value|token_replace : '' ,
+  tab_content_links: node.field_tabs|view('teaser'),
+  tab_content_text:  node.field_tabs|view('default'),
+} %}
+

@@ -1,0 +1,7 @@
+sidebar:
+  card:
+    title: 'Kom kennismaken'
+    text: '<p><strong>Open dag</strong><br/>Zaterdag 10 november</p>
+          <p><strong>Kennismakingsdagen</strong><br/>Vrijdag 9 november<br/>Vrijdag 16 november</p>'
+    call_to_action_text: 'Meer mogelijkheden'
+    call_to_action_url: '#'

@@ -1,0 +1,21 @@
+{#
+/**
+ * @file
+ * link-list
+ *
+ * Available variables for link-list:
+ *    - link_items [array]: List of Drupal Links.
+ */
+#}
+
+<ul class="link-list">
+    {% for item in link_items %}
+    <li>
+        {{ link(item.title, item.uri, { 'class':[
+            (button ? '' : 'link'),
+            button,
+            icon,
+        ]} ) }}
+    </li>
+    {% endfor %}
+</ul>

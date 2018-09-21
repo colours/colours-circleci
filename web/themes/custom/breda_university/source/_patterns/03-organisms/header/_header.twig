@@ -1,0 +1,22 @@
+{#
+/**
+ * @file
+ * header
+ * Header - For logo, main and utility navigation,
+ */
+#}
+
+<header class="header">
+    <div class="header__nav">
+        <div class="container">
+            {% include "@organisms/_navbar.twig" with {
+                navbar_other_classes: ['navbar-expand-lg']
+            } %}
+        </div>
+        <div class="container">
+            <div class="header__search collapse" id="main-search">
+                {{ search_form }}
+            </div>
+        </div>
+    </div>
+</header>

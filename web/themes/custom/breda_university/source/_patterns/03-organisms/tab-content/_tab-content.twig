@@ -1,0 +1,31 @@
+{#
+/**
+ * @file
+ * tab-content
+ *
+ * Available variables for tab-content:
+ *    - tab_content_title [String]: Section title.
+ *    - tab_content_links.tabs [object]: List of tabs (links).
+ *    - tab_content_text.tabs [object]: List of tabs (Text content).
+ */
+#}
+
+<section class="section module--xl-v tab-content">
+    <div class="container contextual-region">
+        {{ title_prefix }}
+        {{ title_suffix }}
+        <h2 class="h1">{{ tab_content_title }}</h2>
+        <div class="row no-gutters justify-content-between tab-container" id="js-tab-content">
+            <div class="col-md-3 col--tab-nav">
+            <ul class="nav flex-column tab-nav" id="tabs" role="tablist" aria-orientation="vertical">
+                {{ tab_content_links }}
+            </ul>
+            </div>
+            <div class="col-md-9 col--tab-content">
+                <div class="tab-content" id="tab-content">
+                {{ tab_content_text }}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

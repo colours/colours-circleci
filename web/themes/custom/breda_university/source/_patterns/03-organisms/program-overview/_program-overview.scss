@@ -1,0 +1,192 @@
+// All component Sass needs non-printing base config
+@import '../../00-protons/variables';
+@import '../../01-atoms/icon/scss/icons-generated';
+@import '../../01-atoms/icon/scss/icon-mixins';
+
+.program-overview {
+    .program-category-list {
+        width: 100%;
+        padding: 0;
+        list-style: none;
+
+        @include media-breakpoint-down(md) {
+            margin-top: $spacer;
+        }
+    }
+
+    .category__title {
+        margin-right: auto;
+        font-family: $font-family-serif;
+        font-size: $font-size-xxl;
+        color: $bu-indigo;
+        text-align: left;
+
+        @include media-breakpoint-down(md) {
+            line-height: 1.2em;
+        }
+    }
+
+    .category__link {
+        position: relative;
+        display: block;
+        margin-bottom: $spacer-sm;
+
+        @include media-breakpoint-up(md) {
+            margin-bottom: $spacer;
+        }
+
+        padding: $spacer-xs $spacer-md $spacer-xs 0;
+        border-bottom: 4px solid $bu-anti-flash-white;
+        text-decoration: none;
+        color: $bu-indigo;
+
+        @include icon('plus-sign');
+        @include icon-after('arrow-right');
+
+        &[aria-expanded='true'] {
+            @include icon('minus-sign');
+        }
+
+        &::after {
+            font-size: $font-size-xs;
+
+        }
+
+        &::before {
+            right: 0;
+            font-size: $font-size-sm;
+            @include center(false, true, true);
+        }
+    }
+
+    .program-list {
+        margin-bottom: $spacer-md;
+        padding: 0;
+        font-size: $font-size-sm;
+    }
+
+    .program-list__item {
+        display: flex;
+        padding: #{$spacer * 0.75} 0;
+        border-bottom: 1px solid $bu-anti-flash-white;
+
+        @include media-breakpoint-down(md) {
+            flex-wrap: wrap;
+            padding: $spacer-xs 0 #{$spacer * 0.75};
+        }
+    }
+
+    .program-list__title {
+        margin-right: auto;
+        color: $bu-cadet;
+        text-decoration: none;
+
+        @include media-breakpoint-down(md) {
+            margin-bottom: 5px;
+        }
+    }
+
+    .badge {
+        margin: 0 0 auto 10px;
+        line-height: 1.5em;
+        letter-spacing: 1px;
+        font-size: $font-size-xs;
+        font-weight: $font-weight-bold;
+        text-transform: uppercase;
+        color: $bu-manatee;
+
+        @include media-breakpoint-down(md) {
+            margin-left: 0;
+
+            + .badge {
+                margin-left: 10px;
+            }
+        }
+    }
+}
+
+@include media-breakpoint-up(md) {
+    .col-filter {
+        order: 2;
+    }
+}
+
+.program-overview__filter {
+    background-color: $bu-anti-flash-white;
+
+    @include media-breakpoint-up(md) {
+        border-top: 3px solid $bu-indigo;
+    }
+
+    @include media-breakpoint-up(md) {
+        &.collapse:not(.show) {
+            display: block;
+        }
+    }
+
+    .filter__title {
+        font-family: $font-family-sans-serif;
+        font-size: $h3-font-size;
+        line-height: 1em;
+        margin-bottom: $spacer-md;
+        color: $bu-indigo;
+    }
+
+    .form-wrapper {
+        margin-bottom: $spacer-md;
+    }
+
+    .form-item {
+        margin-bottom: 0;
+    }
+
+    label {
+        position: relative;
+        padding-left: $spacer-md;
+        text-transform: none;
+        font-size: $font-size-sm;
+        font-weight: $font-weight-normal;
+        cursor: pointer;
+        color: $bu-cadet;
+
+        input[type='checkbox'] {
+            position: absolute;
+            top: 2px;
+            left: 0;
+            vertical-align: middle;
+        }
+    }
+}
+
+.button--toggle-filter {
+    max-width: 768px;
+}
+
+button.filter-toggler {
+    width: 100%;
+    max-width: 768px;
+    margin: 0 auto;
+    padding-right: $spacer-md;
+
+    @include icon-after('filter');
+
+    &[aria-expanded="true"]::after {
+        color: $bu-orange;
+    }
+
+    &::after {
+        right: $spacer-xs;
+        font-size: $font-size-base;
+        @include center(false, true, true);
+    }
+}
+
+.filter--active .button--toggle-filter::after {
+    transform: translateY(-50%) rotate(180deg);
+}
+
+@include media-breakpoint-up(md) {
+    .button--toggle-filter {
+        display: none;
+    }
+}

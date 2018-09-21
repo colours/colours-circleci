@@ -1,0 +1,8 @@
+{{ title_prefix }}
+{{ title_suffix }}
+{% if not node.field_webform.isEmpty() %}
+  {% include '@organisms/_intro.twig' with { intro : { title : content.field_display_title|field_value|render|token_replace} } %}
+{% endif %}
+{{ content.field_content_blocks|field_value }}
+{{ content.field_webform|field_value }}
+{{ content.field_embedded_block|field_value }}

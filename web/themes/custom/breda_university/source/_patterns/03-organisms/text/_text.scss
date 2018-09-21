@@ -1,0 +1,21 @@
+// All component Sass needs non-printing base config
+@import '../../00-protons/variables';
+
+.text__subtitle {
+    margin-bottom: $spacer;
+    font-family: $font-family-sans-serif;
+    font-size: $font-size-sm;
+    line-height: $font-size-base;
+    letter-spacing: 2px;    
+    color: $bu-cadet;
+}
+
+.text__category {
+    margin-bottom: $spacer;
+    font-family: $font-family-sans-serif;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-bold;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    color: $bu-bright-cerulean;
+}

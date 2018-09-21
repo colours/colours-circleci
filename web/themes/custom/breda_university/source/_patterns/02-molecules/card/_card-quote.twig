@@ -1,0 +1,36 @@
+{#
+  Blue Card!
+#}
+
+{% extends '@molecules/card/_card.twig' %}
+{% set text_color = 'bu-cadet' %}
+{% set card_background = 'bu-anti-flash-white' %}
+{% set card_other_classes = 'card--quote' %}
+
+{% block card_body %}
+    <div class="{{ body_class }}">
+        <blockquote>
+            {{ quote_text }}
+        </blockquote>
+        <div class="card__footer row no-gutters">
+            {% if quote_author_image %}
+                <div class="col-4">
+                {% include '@atoms/image/_image.twig' with {
+                    class: 'quote-image',
+                    img: quote_author_image,                    
+                } %}
+                </div>
+            {% endif %}
+            {% if quote_author_name %}
+                <div class="col-8 pl-2">
+                <p class="quote_author_text">
+                    {{ quote_author_name ~ ' - ' ~ [quote_author_role, quote_author_job_description]|join(' ')  }}
+                    {% if quote_author_graduation_year %}
+                        <span>{{ 'Afgestudeerd in ' ~ quote_author_graduation_year }}</span>
+                    {% endif %}
+                </p>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

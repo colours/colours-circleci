@@ -1,0 +1,15 @@
+{#
+/**
+ * @file
+ * tab-content
+ *
+ * Available variables for tab-content:
+ *    - title [String]: Tab title used in navigation list and as url hash
+ *    - anchor [String]: Content of the tab
+ *    - isFirst [boolean]: Wether this is the first tab
+ */
+#}
+
+<li>
+    <a href="#{{ anchor }}" class="tab-link {% if isfirst %}active show{% endif %}" data-toggle="tab" {% if isfirst %}aria-selected="true"{% endif %} aria-controls="tab">{{ title }}</a>
+</li>

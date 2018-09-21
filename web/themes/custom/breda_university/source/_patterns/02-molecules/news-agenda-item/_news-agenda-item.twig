@@ -1,0 +1,29 @@
+{#
+/**
+ * @file
+ * news-agenda-item
+ *
+ * Available variables for news-agenda-item:
+ *    - variable_name [variable_type]: Description of the variable. Example below.
+ */
+#}
+
+<li class="news-agenda-item">
+    <div class="contextual-region module--lg-v">
+        {{ title_prefix }}
+        {{ title_suffix }}
+        <div class="row {% if media %}justify-content-between{% endif %}">
+            {% if media %}
+            <div class="col-12 col-md-4 text-with-media__media">
+                {{ media }}
+            </div>
+            {% endif %}
+            <div class="col-12 {% if media %}col-md-8{% endif %} text-with-media__media">
+                <h3 class="item__title">{{ title }}</h3>
+                <time datetime="{{ date }}">{{ date }}</time>
+                {{ text }}
+                <a href="{{ url }}" class="link link--underline text-bu-bright-cerulean">{{ 'Read more'|t }}</a>
+            </div>
+        </div>
+    </div>
+</li>

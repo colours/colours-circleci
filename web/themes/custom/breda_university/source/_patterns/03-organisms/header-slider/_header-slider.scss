@@ -1,0 +1,58 @@
+// All component Sass needs non-printing base config
+@import '../../00-protons/variables';
+
+$header-slider-title-font-size: 48px;
+
+.header-slider {
+    position: relative;
+    padding-top: 0;
+
+    .container {
+        position: relative;
+    }
+
+    @include media-breakpoint-up(lg) {
+        .container {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            min-height: 445px;
+        }
+
+        .card {
+            max-width: 480px;
+            margin-top: auto;
+            overflow: visible;
+
+            .card-title {
+                font-size: $header-slider-title-font-size;
+            }
+
+            .card-title::after {
+                content: '';
+                display: block;
+                width: 80px;
+                height: 4px;
+                margin-top: $spacer;
+                margin-bottom: $spacer;
+                background-color: $bu-indigo;
+            }
+
+        }
+
+        picture {
+            position: absolute;
+            left: 15px;
+            bottom: 45px;
+        }
+
+        .btn {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            transform: translateY(50%);
+        }
+    }
+
+}
+

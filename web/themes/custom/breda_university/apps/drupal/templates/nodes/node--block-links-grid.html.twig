@@ -1,0 +1,8 @@
+{% include '@organisms/_link-grid.twig' with {
+  link_grid: {
+    title:       node.field_display_title.value ? node.field_display_title.value|token_replace : '' ,
+    button_text: node.field_cta_button.value ? content.field_cta_button[0]['#title']|token_replace : '',
+    button_link: node.field_cta_button.value ? content.field_cta_button[0]['#url']|render : '',
+    link_items:  link_items,
+  }
+} %}

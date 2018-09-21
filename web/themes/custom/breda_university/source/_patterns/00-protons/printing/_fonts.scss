@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,600i,700');
+
+@font-face {
+    font-family: 'ffscalaweb';
+    src: url('#{$font-path}ffscalaweb.eot');
+    src: url('#{$font-path}ffscalaweb.eot?#iefix') format('embedded-opentype'),
+        url('#{$font-path}ffscalaweb.woff2') format('woff2'),
+        url('#{$font-path}ffscalaweb.woff') format('woff'),
+        url('#{$font-path}ffscalaweb.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}

@@ -1,0 +1,23 @@
+action_button:
+  title: 'Praktische informatie'
+  call_to_action_text: 'Direct aanmelden'
+  call_to_action_url: '#'
+  link_items:
+    -
+      title: 'Toelatingsvoorwaarden'
+      url: '#'
+    -
+      title: 'Aanmeldprocedure en studiekeuzecheck'
+      url: '#'
+    -
+      title: 'Jaarrooster'
+      url: '#'
+    -
+      title: 'Bindend Studie Advies'
+      url: '#'
+    -
+      title: 'Opleidingsgegevens'
+      url: '#'
+    -
+      title: 'Studiekosten'
+      url: '#'

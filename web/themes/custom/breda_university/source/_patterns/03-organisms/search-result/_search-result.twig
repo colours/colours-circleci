@@ -1,0 +1,66 @@
+{#
+/**
+ * @file
+ * search-result
+ *
+ * Available variables for search-result:
+ * search_result.number_of_results [Number]: Number of search returned.
+ * search_result.search_string [String]: Search string from search field.
+ * search_result.search_form [Object/HTML]: Search form from Drupal.
+ * search_result.search_filter [Object/HTML]: Search filter from Drupal.
+ * search_result.results [String]: Rendered list of result categories.
+ */
+#}
+
+<section class="search-result">
+    {% if search_result.search_string is not empty %}
+    <div class="bg-bu-anti-flash-white">
+    <div class="container container--md module--md-v">
+        {% if search_result.results %}
+            {% trans %}
+                <h1>{{ search_result.number_of_results }} result found for {{ search_result.search_string }}</h1>
+            {% plural search_result.number_of_results %}
+                <h1>{{ search_result.number_of_results }} results found for {{ search_result.search_string }}</h1>
+            {% endtrans %}
+        {% else %}
+            <h1>{{ search_result.empty}}</h1>
+        {% endif %}
+    </div>
+    </div>
+    {% endif %}
+    <div class="container container--md module--md-v">
+        <div class="row">
+            <div class="col-7">
+                <div class="search-form d-none d-md-block">
+                    {{ search_result.search_form }}
+                </div>
+            </div>
+        </div>
+        <div class="row">
+        <div class="col-12 col-md-4 col-lg-3 col-filter">
+        {% include '@atoms/button/_button.twig' with {
+        button_color: 'primary',
+        button_outline: true,
+        button_other_classes: 'filter-toggler d-md-none',
+        button_toggle: 'collapse',
+        button_other_attributes: 'data-target="#search-result" aria-controls="search-result" aria-expanded="false" aria-label="Toggle filter"',
+        button_text: '<span class="icon">Filter</span>',
+        button_text_raw: true,
+        } %}
+                <div class="search-result__filter module module--md collapse d-lg-block" id="search-result">
+                    {{ search_result.search_filter }}
+                </div>
+            </div>
+            <div class="col-12 col-md-8 col-lg-9 col-result-list">
+                <ul class="search-result__list" role="tablist">
+                    {{ search_result.results }}
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                {{ pager }}
+            </div>
+        </div>
+    </div>
+</section>

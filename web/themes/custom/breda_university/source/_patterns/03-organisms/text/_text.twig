@@ -1,0 +1,46 @@
+{#
+/**
+ * @file
+ * text-sidebar
+ *
+ * Available variables for text-sidebar:
+ *    - text_with_media.heading_type [String]: h1 or h2 (h2 is default)
+ *    - text.title [String]: Introduction text that is shown lager.
+ *    - text.title_left [Bool]: Place the title left or top.
+ *    - text.text [String]: Main text column
+ *    - text.sub_title [String]: title below main title. Could be date.
+ *    - text.category [String]: Shows the category name below title.
+ *    - text.background_color [String]: Class bg-bu-anti-flash-white or empty string
+ */
+#}
+
+<section class="section module--xl-v text {{ text.background_color }}">
+    <div class="container container--md contextual-region">
+        {{ title_prefix }}
+        {{ title_suffix }}
+        {% set textTitle %}
+        <div class="col-12 col-md-4">
+            {% if text.title %}
+                <{{ text.heading_type|default('h2') }} class="h1 mb-3">{{ text.title }}</{{ text.heading_type|default('h2') }}>
+                {% if text.sub_title %}<p class='text__subtitle'>{{ text.sub_title }}</p>{% endif %}
+                {% if text.sub_title %}<p class='text__category'>{{ text.category }}</p>{% endif %}
+            {% endif %}
+        </div>
+        {% endset %}
+
+        {% if not text.title_left %}
+            <div class="row">
+                {{ textTitle }}
+            </div>
+        {% endif %}
+
+        <div class="row no-gutters {%if text.title_left %}justify-content-between{%endif%}">
+            {% if text.title_left %}
+                {{ textTitle }}
+            {% endif %}
+            <div class="col-12 col-md-7">
+                {% include "@molecules/_text-column.twig" %}
+            </div>
+        </div>
+    </div>
+</section>

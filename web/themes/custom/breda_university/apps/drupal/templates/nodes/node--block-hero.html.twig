@@ -1,0 +1,11 @@
+{% set  header_slider = {
+  title: node.field_display_title.value ? node.field_display_title.value|token_replace : '' ,
+  intro_text: content.field_intro_text|field_value,
+  image: content.field_block_image,
+  button_text: node.field_cta_button.value ? content.field_cta_button[0]['#title']|token_replace : '',
+  button_link: node.field_cta_button.value ? content.field_cta_button[0]['#url']|render : ''
+}%}
+
+{% include '@organisms/_header-slider.twig' with {
+  header_slider: header_slider
+} %}

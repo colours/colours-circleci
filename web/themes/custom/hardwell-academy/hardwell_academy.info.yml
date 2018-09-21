@@ -1,0 +1,18 @@
+name: Hardwell Academy
+type: theme
+description: Sub theme of Breda University
+base theme: breda_university
+package: Colours
+core: 8.x
+regions:
+  service_menu: Service menu
+  header: Header
+  subsites_header: Subsites header
+  content: Content
+  footer: Footer
+  subsites_footer: Subsites footer
+  subsites_service_footer: Subsites service footer
+  hidden: Hidden
+libraries:
+  - hardwell-academy/core
+  - hardwell-academy/global-styling

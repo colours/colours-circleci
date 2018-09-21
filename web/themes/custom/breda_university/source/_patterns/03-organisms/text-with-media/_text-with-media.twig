@@ -1,0 +1,39 @@
+{#
+/**
+ * @file
+ * text-with-media
+ *
+ * Available variables for text-with-media:
+ *    - text_with_media.heading_type [String]: h1 or h2 (h2 is default)
+ *    - text_with_media.title [String]: Title
+ *    - text_with_media.text [String]: Main text column
+ *    - text_with_media.align_media_right [Boolean]: Place text left or right
+ *    - text_with_media.media [Boolean]: Either a picture elemen or an video element.
+ */
+#}
+
+<section class="section module--lg-v text-with-media {{ text_with_media.background_color }}">
+    <div class="container container--md contextual-region">
+        {{ title_prefix }}
+        {{ title_suffix }}
+        <div class="row justify-content-between">
+            {% set mediaColumn %}
+            <div class="col-12 col-md-7 text-with-media__media">
+                {{ text_with_media.media }}
+            </div>
+            {% endset %}
+
+            {% if not text_with_media.align_media_right %}
+                {{ mediaColumn }}
+            {% endif %}
+
+            <div class="col-12 col-md-5 text-with-media__text {% if tex_with_media.align_media_right %}pl-5{% else %}pr-5{% endif %}">
+                <{{ text_with_media.heading_type|default('h2') }} class="h1">{{ text_with_media.title }}</{{ text_with_media.heading_type|default('h2') }}>
+                {{ text_with_media.text }}
+            </div>
+            {% if text_with_media.align_media_right %}
+                {{ mediaColumn }}
+            {% endif %}
+        </div>
+    </div>
+</section>

@@ -1,0 +1,119 @@
+@import '../../../00-protons/variables';
+
+// To change default bootstrap nav variables,
+// copy from ~bootstrap/scss/variables to here
+
+$nav-link-disabled-color: $gray-600;
+
+@import "~bootstrap/scss/nav";
+
+@include media-breakpoint-up(lg) {
+    .navbar__utility div {
+        display: inline-block;
+    }
+}
+
+.navbar__utility > .contextual {
+    right: auto;
+    left: 0;
+}
+
+@include media-breakpoint-down(md) {
+    .nav--utility {
+        flex-direction: column;
+
+        .nav-item {
+            display: inline-block;
+        }
+
+        .nav-link {
+            padding: $spacer-sm 0;
+            text-decoration: none;
+            color: $white;
+        }
+    }
+
+    .nav--language {
+        .nav-link {
+            border: 1px solid $white;
+            margin-right: $spacer-sm;
+            padding: $spacer-xs $spacer;
+            text-decoration: none;
+            color: $white;
+
+            &:hover,
+            &.is-active,
+            &.active {
+                border-color: $white;
+                color: $bu-indigo;
+                background-color: $white;
+            }
+        }
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    .navbar__utility {
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-color: $bu-anti-flash-white;
+        box-shadow: 500px 0 0 $bu-anti-flash-white;
+
+        .nav {
+            display: inline-flex;
+        }
+
+        .nav-link {
+            margin: 6px 15px;
+            padding: 1px 5px;
+            font-size: $font-size-xxs;
+            font-weight: $font-weight-bold;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: $bu-cadet;
+
+            &:hover,
+            &.is-active,
+            &.active {
+                color: $bu-indigo;
+                border-bottom: 2px solid $bu-cadet;
+            }
+        }
+
+        .is-active,
+        .active {
+            .nav-link {
+                color: $bu-indigo;
+                border-bottom: 2px solid $bu-cadet;
+            }
+        }
+
+        .nav--language {
+            display: none;
+        }
+
+        #language-switcher:target {
+            display: inline-flex;
+        }
+    }
+
+    .nav--language {
+        padding-left: 10px;
+
+        .nav-link {
+            margin: 6px 8px;
+            padding: 1px 2px;
+            text-decoration: none;
+
+            &:hover {
+                color: $bu-indigo;
+            }
+
+            &.is-active,
+            &.active {
+                border-bottom: 2px solid $bu-cadet;
+            }
+        }
+    }
+}

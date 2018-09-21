@@ -1,0 +1,5 @@
+{% include '@molecules/_card-simple.twig' with {
+    card_link:      paragraph.field_primary_link.value ? content.field_primary_link[0]['#url']|render : '',
+    card_link_text: paragraph.field_primary_link.value ? content.field_primary_link[0]['#title']|token_replace : '',
+    card_text:      content.field_primary_link_text
+} %}

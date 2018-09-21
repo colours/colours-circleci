@@ -1,0 +1,65 @@
+{#
+/**
+ * @file
+ * program-overview
+ *
+ * Available variables for program-overview:
+ *    - program_overview.categories [Array]: List of program categories.
+ *    - category.title [String]: Name of the category.
+ *    - category.programs [Arrya]: List of programs for a specific category.
+ *    - program.title [String]: Name of the program.
+ *    - program.url [String]: Url of the program detail page.
+ *    - program.tags [Array]: List of tags added to a program.
+ *    - tag.title [String]: Title of the tag.
+ */
+#}
+
+<section class="section module--lg-v program-overview">
+    <div class="container">
+        <div class="row">
+        <div class="col-12 col-md-4 col-lg-3 col-filter">
+        {% include '@atoms/button/_button.twig' with {
+        button_color: 'primary',
+        button_outline: true,
+        button_other_classes: 'filter-toggler d-md-none',
+        button_toggle: 'collapse',
+        button_other_attributes: 'data-target="#program-filter" aria-controls="program-filter" aria-expanded="false" aria-label="Toggle filter"',
+        button_text: '<span class="icon">Filter</span>',
+        button_text_raw: true,
+        } %}
+                <div class="program-overview__filter module module--md collapse d-lg-block" id="program-filter">
+                    <h2 class="filter__title">
+                        {{ 'Your preferences'|t }}
+                    </h2>
+                    {{ program_overview.filter_form }}
+                </div>
+            </div>
+            <div class="col-12 col-md-8 col-lg-9 col-program-list">
+                {% set program_list_id = random() %}
+                <ul id="{{ 'program-list-' ~ program_list_id }}" class="program-category-list" role="tablist">
+                    {% for category in program_overview.categories %}
+                        <li id="category-{{ category.title|clean_id }}" >
+                            <div class="category" role="tab" id="{{ 'category-' ~ loop.index }}">
+                                <a class="category__link icon" data-toggle="collapse" href="{{ '#category-list-' ~ loop.index }}" aria-expanded="{{ list_expanded }}" aria-controls="{{ 'category-list-' ~ loop.index }}">
+                                    <span class="category__title">{{ category.title }} <span class="category__number-of-programs">({{ category.programs|length }})</span></span>
+                                </a>
+                            </div>
+                            <div id="{{ 'category-list-' ~ loop.index }}" class="collapse" role="tabpanel" aria-labelledby="{{ 'category-' ~ loop.index }}" data-parent="{{ 'program-list-' ~ program_list_id }}">
+                                <ul class="program-list">
+                                    {% for program in category.programs %}
+                                    <li class="program-list__item">
+                                        <a href='{{ program.url }}' class="program-list__title" title="{{ program.title }}">{{ program.title | raw }}</a>
+                                        {% for tag in program.tags %}
+                                        <span class="badge badge-pill badge-bu-anti-flash-white tag-{{ tag.title|clean_id  }}">{{ tag.title }}</span>
+                                        {% endfor %}
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>

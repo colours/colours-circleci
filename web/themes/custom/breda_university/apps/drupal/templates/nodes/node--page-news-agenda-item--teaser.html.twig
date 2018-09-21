@@ -1,0 +1,15 @@
+<div class="col col-12 col-md-4 module--sm">
+{% set catch_cache = content.field_card_layout|render %}
+{% include '@molecules/_card-layout.twig' with {
+  card_title: node.field_display_title.value ? node.field_display_title.value|token_replace : '',
+  card_category: content.field_news_agenda_category|field_target_entity.name.value,
+  card_text: node.field_item_type.value == 'agenda' ? content.field_date|field_value : '',
+  button: {
+    button_link: url,
+    button_text: 'Read more'|t
+  },
+  layout: node.field_media.isEmpty() ? 'card--grey' : 'card--grey--bi',
+  card_image: file_url(content.field_media|field_target_entity.field_media_image.entity.uri.value|image_style('blue_block_default')),
+  suffix: title_suffix
+} %}
+</div>

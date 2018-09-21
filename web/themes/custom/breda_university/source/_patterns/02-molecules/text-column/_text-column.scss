@@ -1,0 +1,16 @@
+// All component Sass needs non-printing base config
+@import '../../00-protons/variables';
+
+.text-column__intro {
+    margin-bottom: $spacer-lg;
+}
+
+.text-column__main {
+    h3 {
+        font-size: $h4-font-size;
+    }
+
+    .btn {
+        margin-top: $spacer-lg;
+    }
+}

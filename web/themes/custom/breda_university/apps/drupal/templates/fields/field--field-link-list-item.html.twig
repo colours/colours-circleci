@@ -1,0 +1,7 @@
+{% for item in items %}
+    {% include '@atoms/_link.twig' with {
+        link_url:           item.content['#url']|render,
+        link_text:          item.content['#title']|token_replace,
+        link_other_classes: 'icon icon--before icon--arrow-right icon--blue',
+  } %}
+{% endfor %}

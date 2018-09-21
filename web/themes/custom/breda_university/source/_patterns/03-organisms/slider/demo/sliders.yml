@@ -1,0 +1,6 @@
+slider:
+  picture:
+    img_element: '<img src="http://via.placeholder.com/1148x400" />'
+  card:
+    title: 'Logistiek management'
+    text: 'Lorem ipsum dolor sit amet consectetur adipiscing elit penatibus pretium, elementum fermentum placerat eget sociis litora curabitur justo at potenti, convallis ante cubilia viverra facilisi inceptos ornare tempor. Pharetra magna tincidunt commodo cursus ridiculus ullamcorper ultricies aenean lobortis sem fringilla, tortor blandit consectetur magnis velit ad litora euismod odio suscipit adipiscing, lectus suspendisse morbi gravida tristique habitasse turpis sollicitudin integer torquent. Venenatis phasellus et lacus senectus in sapien facilisis malesuada suscipit tincidunt, tempor sociosqu cursus metus mauris potenti vehicula sit gravida, aliquam ut adipiscing nostra donec natoque iaculis ad orci.'

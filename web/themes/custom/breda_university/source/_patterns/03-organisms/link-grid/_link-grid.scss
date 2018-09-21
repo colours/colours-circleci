@@ -1,0 +1,79 @@
+// All component Sass needs non-printing base config
+@import '../../00-protons/variables';
+
+.link-grid {
+    .btn--read-more {
+        padding: 0;
+        font-size: $font-size-xs;
+        color: $bu-bright-cerulean;
+        letter-spacing: 2px;
+        text-decoration: underline;
+
+        &:hover {
+            background-color: transparent;
+            text-decoration: none;
+        }
+    }
+
+    .link-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        li {
+            margin: 0 0 $spacer;
+            width: 100%;
+        }
+
+        @include media-breakpoint-up(sm) {
+            li:nth-of-type(1n) {
+                margin-right: $spacer;
+                width: calc(50% - (#{$spacer}/2));
+            }
+
+            li:nth-of-type(2n+2) {
+                margin-right: 0;
+            }
+        }
+
+        @include media-breakpoint-up(lg) {
+            li:nth-of-type(1n) {
+                margin-right: $spacer;
+                width: calc(33.333% - (#{$spacer}/1.5));
+            }
+            
+            li:nth-of-type(3n+3) {
+                margin-right: 0;
+            }
+        }
+
+        @include media-breakpoint-up(xl) {
+            li:nth-of-type(1n) {
+                margin-right: $spacer;
+                width: calc(25% - (#{$spacer}*0.75));
+            }
+
+            li:nth-of-type(4n+4) {
+                margin-right: 0;
+            }
+        }
+        
+        &:after {
+            content: "";
+            flex: auto;
+        }
+
+        .btn {
+            height: 100%;
+            width: 100%;
+            padding: $spacer $spacer-md;
+            font-size: $font-size-xs;
+            word-break: break-word;
+            hyphens: auto;
+        }
+
+        .btn:hover {
+            box-shadow: 0 0 12px rgba(0, 0, 0, 0.19);
+        }
+    }
+}

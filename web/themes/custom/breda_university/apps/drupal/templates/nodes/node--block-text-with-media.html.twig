@@ -1,0 +1,15 @@
+{#
+/**
+ * content.field_background_colour|render|striptags|trim|lower
+ */
+#}
+{% set text_with_media = {
+  heading_type : 'h2',
+  title: node.field_display_title.value ? node.field_display_title.value|token_replace : '' ,
+  text: content.field_text|field_value,
+  align_media_right: (content.field_align|render|striptags|trim == 'left') ? false : true,
+  media: content.field_media|field_value,
+  background_color: (content.field_background_colour|render|striptags|trim|lower == 'grey') ? 'bg-bu-anti-flash-white' : '',
+} %}
+
+{% include '@organisms/_text-with-media.twig' with {text_with_media: text_with_media} %}

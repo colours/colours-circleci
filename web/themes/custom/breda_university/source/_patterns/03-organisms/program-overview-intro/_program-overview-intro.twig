@@ -1,0 +1,44 @@
+{#
+/**
+ * @file
+ * program-overview-intro
+ *
+ * Available variables for program-overview-intro:
+ *    - program_overview_intro.title [String]: Page title
+ *    - program_overview_intro.intro_text [String]: Introduction text.
+ *    - program_overview_intro.card [HTML]: The card block
+ */
+#}
+
+<section class="section module--lg-v program-overview-intro contextual-region">
+    {{ title_prefix }}
+    {{ title_suffix }}
+    <div class="bg-bu-anti-flash-white">
+        <div class="container container--md">
+            <div class="row no-gutters justify-content-between bg-bu-anti-flash-white">
+                <div class="col-12 col-md-7">
+                    <h1 class="mb-3">{{ program_overview_intro.title }}</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% if program_overview_intro.intro and program_overview_intro.card %}
+    <div class="container container--md module--md-v">
+        <div class="bg-white">
+            <div class="row no-gutters justify-content-between">
+                {% if program_overview_intro.intro or program_overview_intro.card %}
+                <div class="col-12 col-md-7 module--md-v text--intro">
+                    {{ program_overview_intro.intro }}
+                </div>
+                {% endif %}
+                {% if program_overview_intro.card %}
+                <aside class="col-12 col-md-4 program-overview-intro__aside">
+                    {{ program_overview_intro.card }}
+                </aside>
+                {% endif %}
+            </div>
+
+        </div>
+    </div>
+    {% endif %}
+</section>

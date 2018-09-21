@@ -1,0 +1,72 @@
+
+
+// All component Sass needs non-printing base config
+@import '../../00-protons/variables';
+
+$spacer-picture-v: $spacer * 13;
+
+.homepage-header {
+    .container {
+        position: relative;
+        padding-top: $spacer-picture-v;
+    }
+
+    picture {
+        position: absolute;
+        left: 0;
+        top: 0;
+        box-shadow: -100px 80px 0 $bu-anti-flash-white, 0 80px 0 $bu-anti-flash-white;
+        background-color: $bu-anti-flash-white;
+
+        @include media-breakpoint-up(md) {
+            left: 100px;
+        }
+
+        img {
+            width: 100%;
+            max-width: 100%;
+            @include media-breakpoint-up(xl) {
+                max-width: none;
+                width: auto;
+            }
+        }
+    }
+
+    .card {
+        border-width: 0;
+        height: 100%;
+        transition: box-shadow 0.2s;
+
+        &:hover {
+            z-index: 10;
+            border-color: transparent;
+            box-shadow: 0 0 22px rgba($bu-black, 0.2);
+        }
+
+        .card-link {
+            display: inline-block;
+            font-size: 32px;
+            word-wrap: normal;
+        }
+    }
+
+    .row {
+        margin-left: auto;
+        max-width: 1000px;
+    }
+
+    @include media-breakpoint-down(lg) {
+        .col:nth-child(1) .card,
+        .col:nth-child(2) .card,
+        .col:nth-child(3) .card {
+            border-bottom-width: 1px;
+        }
+    }
+
+    @include media-breakpoint-up(md) {
+        .col:nth-child(2) .card {
+            border-left-width: 1px;
+            border-right-width: 1px;
+        }
+    }
+}

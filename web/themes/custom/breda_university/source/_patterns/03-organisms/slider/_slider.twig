@@ -1,0 +1,20 @@
+{#
+/**
+ * @file
+ * slider
+ *
+ * Available variables for slider:
+ *    - slider.card_main [object]: Main orang card that doens't move.
+ *    - slider.slide_collection [object]: Drupal collection of slides
+ */
+#}
+
+<section class="section section--slider module--xxl-v contextual-region">
+    {{ suffix }}
+    <div class="container">
+        {{ slider.card_main }}
+        <div class="slider">
+            {{ slider.slide_collection }}
+        </div>
+    </div>
+</section>

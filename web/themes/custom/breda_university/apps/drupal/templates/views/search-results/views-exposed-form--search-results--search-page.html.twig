@@ -1,0 +1,31 @@
+{#
+/**
+ * @file
+ * Theme override of a views exposed form.
+ *
+ * Available variables:
+ * - form: A render element representing the form.
+ *
+ * @see template_preprocess_views_exposed_form()
+ */
+#}
+{% if q is not empty %}
+  {#
+    This ensures that, if clean URLs are off, the 'q' is added first,
+    as a hidden form element, so that it shows up first in the POST URL.
+  #}
+{{ q }}
+{% endif %}
+<form {{form.attributes }}>
+  <div class="container-inline">
+    <h2 class="element-invisible">Search form</h2>
+    {{ form.text }}
+    <div class="element-invisible">{{ form.type }}</div>
+    <div class="form-actions form-wrapper" id="edit-actions">
+      {{ form.actions.submit }}
+    </div>
+    {{ form.form_build_id }}
+    {{ form.form_token }}
+  </div>
+</form>
+

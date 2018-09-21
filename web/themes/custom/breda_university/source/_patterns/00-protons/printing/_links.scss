@@ -1,0 +1,29 @@
+
+.link {
+    display: inline-block;
+}
+
+// Add custom code here
+.link.icon--before {
+    position: relative;
+    padding-left: $spacer * 2.5;
+
+    &::before {
+        @include center(false, true, true);
+        left: 0;
+    }
+}
+
+.link.icon--after {
+    position: relative;
+    padding-right: $spacer * 25;
+
+    &::before {
+        @include center(false, true, true);
+        right: 0;
+    }
+}
+
+.link.icon--blue::before {
+    color: $bu-indigo;
+}
