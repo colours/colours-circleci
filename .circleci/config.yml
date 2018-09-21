@@ -94,12 +94,12 @@ jobs:
                 name: Update npm
                 command: 'sudo npm install -g npm@latest'
             - restore_cache:
-                key: dependency-cache-{{ checksum "package.json" }}
+                key: dependency-cache-{{ checksum "./web/themes/custom/breda_university/package.json" }}
             - run:
                 name: run npm ci
                 command: npm ci
             - save_cache:
-                key: dependency-cache-{{ checksum "package.json" }}
+                key: dependency-cache-{{ checksum "./web/themes/custom/breda_university/package.json" }}
                 paths:
                     - node_modules
 
