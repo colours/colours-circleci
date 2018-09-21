@@ -1,0 +1,14 @@
+uuid: 7c860948-c6e4-421a-97f2-cada6aac9c40
+name: colours-circleci
+mail: e.zenko@colours.nl
+slogan: ''
+page:
+  403: ''
+  404: ''
+  front: /node
+admin_compact_mode: false
+weight_select_max: 100
+langcode: en
+default_langcode: en
+_core:
+  default_config_hash: yXadRE77Va-G6dxhd2kPYapAvbnSvTF6hO4oXiOEynI
