@@ -2,6 +2,8 @@
 defaults: &defaults
   docker:
     - image: quay.io/pantheon-public/build-tools-ci:1.x
+    - image: circleci/node:10
+      command: [npm]
   working_directory: ~/example_drops_8_composer
   environment:
     #=========================================================================
@@ -81,25 +83,6 @@ jobs:
                 name: run unit tests
                 command: composer -n unit-test
 
-    build_assets:
-        # The primary container is an instance of the first image listed. The job's commands run in this container.
-        docker:
-            - image: circleci/node:10
-        steps:
-            - checkout
-            - run:
-                name: Update npm
-                command: 'sudo npm install -g npm@latest'
-            # - restore_cache:
-            #     key: dependency-cache-{{ checksum "package.json" }}
-            - run:
-                name: run npm ci and build assets for Drupal
-                command: cd ./web/themes/custom/breda_university && npm ci && npm run build:drupal
-            # - save_cache:
-            #     key: dependency-cache-{{ checksum "package.json" }}
-            #     paths:
-            #         - node_modules
-
     build_deploy_and_test:
         <<: *defaults
         steps:
@@ -121,9 +104,14 @@ jobs:
                 command: ./.circleci/scripts/pantheon/01-prepare
 
             - run:
+                name: Update npm
+                command: 'sudo npm install -g npm@latest'
+            - run:
+                name: run npm ci and build assets for Drupal
+                command: cd ./web/themes/custom/breda_university && npm ci && npm run build:drupal
+            - run:
                 name: build assets
                 command: composer -n build-assets
-
             - run:
                 name: prepare database for site-under test
                 command: ./.circleci/scripts/pantheon/02-init-site-under-test-clone-existing
