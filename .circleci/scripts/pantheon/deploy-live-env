@@ -2,6 +2,11 @@
 
 set -eo pipefail
 
+echo "Begin deploy from TEST to LIVE environment"
+
+# Log in via Terminus
+terminus -n auth:login --machine-token="$TERMINUS_TOKEN"
+
 # Make DB backup before run commands. Keep it for one day
 terminus backup:create $TERMINUS_SITE.live --element=db --keep-for=1
 

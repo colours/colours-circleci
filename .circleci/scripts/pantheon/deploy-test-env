@@ -2,6 +2,11 @@
 
 set -eo pipefail
 
+echo "Begin deploy from DEV to TEST environment"
+
+# Log in via Terminus
+terminus -n auth:login --machine-token="$TERMINUS_TOKEN"
+
 # Deploy code from the Dev environment to Test
 terminus env:deploy $TERMINUS_SITE.test --note "Autodeploy from Circle" --yes
 
