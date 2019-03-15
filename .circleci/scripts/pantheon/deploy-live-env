@@ -1,0 +1,19 @@
+#!/bin/bash
+
+set -eo pipefail
+
+# Make DB backup before run commands. Keep it for one day
+terminus backup:create $TERMINUS_SITE.live --element=db --keep-for=1
+
+# Deploy code from the Dev environment to Test
+terminus env:deploy $TERMINUS_SITE.live --note "Autodeploy from Circle" --yes
+
+# Run updatedb on the dev environment
+terminus -n drush $TERMINUS_SITE.live -- updatedb --yes
+
+# If there are any exported configuration files, then import them
+if [ -f "config/system.site.yml" ] ; then
+  terminus -n drush "$TERMINUS_SITE.live" -- config-import --yes
+fi
+
+terminus -n drush "$TERMINUS_SITE.live" -- cache-rebuild
